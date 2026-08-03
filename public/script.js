@@ -45,8 +45,44 @@ const installFizzyFunkWork = async () => {
   }
 };
 
+const installMedsAttireCaseStudy = () => {
+  const workGrid = document.querySelector('.work-grid');
+  const featuredWork = workGrid?.querySelector('.work-card-wide');
+  if (!workGrid || !featuredWork || workGrid.querySelector('.medsattire-case')) return;
+
+  const caseStudy = document.createElement('article');
+  caseStudy.className = 'work-card work-card-wide medsattire-case reveal';
+  caseStudy.innerHTML = `
+    <div class="medsattire-case-inner">
+      <div class="medsattire-intro">
+        <div class="medsattire-kicker"><span>Meta Ads</span><span>Healthcare apparel</span></div>
+        <div class="medsattire-symbol" aria-hidden="true"></div>
+        <h3>Profitable growth for a medical workwear brand.</h3>
+        <p>MedsAttire sells premium scrubs, lab coats and healthcare accessories for medical professionals. The campaign scaled revenue while reducing the cost of converting each customer.</p>
+        <a class="medsattire-site-link" href="https://www.medsattire.com/" target="_blank" rel="noreferrer">Visit MedsAttire <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="medsattire-results" aria-label="MedsAttire Meta Ads campaign results">
+        <div class="medsattire-metric is-primary"><strong>10×</strong><span>Return on ad spend</span></div>
+        <div class="medsattire-metric is-primary"><strong>525%</strong><span>Revenue growth</span></div>
+        <div class="medsattire-metric is-primary"><strong>80%</strong><span>Lower cost per purchase</span></div>
+        <div class="medsattire-metric"><strong>2.8M+</strong><span>Ad impressions</span></div>
+        <div class="medsattire-metric"><strong>120K+</strong><span>People reached</span></div>
+        <div class="medsattire-metric"><strong>3.9%</strong><span>Click-through rate</span></div>
+        <div class="medsattire-metric"><strong>40%</strong><span>Lower cost per click</span></div>
+        <div class="medsattire-metric"><strong>98%</strong><span>Conversion tracking accuracy</span></div>
+      </div>
+    </div>
+    <div class="work-meta">
+      <div><span>Meta Ads performance</span><h3>MedsAttire e-commerce growth campaign</h3></div>
+      <p>Paid social performance for a specialist healthcare clothing retailer, combining profitable scaling with stronger acquisition efficiency and reliable conversion measurement.</p>
+    </div>`;
+
+  featuredWork.insertAdjacentElement('afterend', caseStudy);
+};
+
 installOfficialBranding();
 installFizzyFunkWork();
+installMedsAttireCaseStudy();
 
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('[data-menu-button]');
