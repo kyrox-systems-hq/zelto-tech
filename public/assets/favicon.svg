@@ -1,6 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="15" fill="#ff6f68"/>
-  <path d="M11 12h30L29 25H11V12Z" fill="#0a1219"/>
-  <path d="M40 12h14L25 52H11L40 12Z" fill="#0a1219"/>
-  <path d="M36 39h18v13H25l11-13Z" fill="#0a1219"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.52 221.73">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff6f68;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <polygon class="cls-1" points="1.08 0 1.08 65.6 101.38 65.6 0 174.57 0 221.73 53.13 221.73 104.63 164.81 158.58 218.75 212.52 218.75 212.52 153.97 113.31 153.97 212.52 45.54 212.52 1.63 156.68 1.63 107.89 55.3 53.67 1.08 1.08 0"/>
+  </g>
 </svg>
