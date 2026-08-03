@@ -18,8 +18,9 @@ const installFizzyFunkWork = async () => {
 
   try {
     const parts = await Promise.all(
-      [0, 1, 2, 3, 4].map(async index => {
-        const response = await fetch(`assets/fizzy-data-${index}.txt`);
+      [0, 1, 2, 3, 4, 5].map(async index => {
+        const part = String(index).padStart(2, '0');
+        const response = await fetch(`assets/fizzy-showcase-${part}.txt`);
         if (!response.ok) throw new Error(`Fizzy Funk asset ${index} failed to load`);
         return response.text();
       })
