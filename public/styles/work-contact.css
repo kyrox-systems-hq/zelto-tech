@@ -1,0 +1,33 @@
+.work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.work-card { border: 1px solid var(--dark-line); border-radius: var(--radius); overflow: hidden; background: rgba(255,255,255,.34); }
+.work-card-wide { grid-column: 1 / -1; }
+.work-visual { min-height: 410px; position: relative; overflow:hidden; }
+.display-work { display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:30px;background:#0d171f}.display-ad{border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;min-height:350px}.display-ad span,.platform-label{font-size:9px;text-transform:uppercase;letter-spacing:.1em}.display-ad strong{font-size:clamp(34px,4vw,66px);line-height:.92;letter-spacing:-.06em;max-width:560px}.ad-left{background:var(--coral);color:var(--black)}.ad-right{background:var(--white);color:var(--black)}.platform-label{position:absolute;right:20px;top:18px;padding:8px 10px;border-radius:999px;background:var(--black);color:var(--white)}
+.linkedin-work{background:#f0ebf1;padding:44px;display:grid;place-items:center}.linkedin-post{width:min(88%,430px);background:#fff;border-radius:16px;padding:18px;box-shadow:0 28px 70px rgba(0,0,0,.14);transform:rotate(-2deg)}.post-head{display:flex;gap:8px;align-items:center}.post-head i{width:28px;height:28px;border-radius:50%;background:var(--black)}.post-head span{width:90px;height:6px;background:#e5e0e6;border-radius:4px}.post-copy{width:78%;height:36px;margin:15px 0;background:repeating-linear-gradient(to bottom,#e5e0e6 0 4px,transparent 4px 10px)}.post-creative{background:var(--coral);border-radius:10px;padding:28px;font-size:42px;line-height:.95;font-weight:720;letter-spacing:-.06em}
+.automation-work{background:#0d171f}.automation-work svg{position:absolute;inset:0;width:100%;height:100%}.automation-work path{fill:none;stroke:rgba(255,111,104,.62);stroke-width:1.4;stroke-dasharray:5 6}.automation-node{position:absolute;z-index:2;background:#17232d;border:1px solid rgba(255,255,255,.15);border-radius:12px;color:#e8e3e9;padding:13px 16px;font-size:11px}.automation-node::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--coral);display:inline-block;margin-right:8px}.n1{left:8%;top:15%}.n2{left:38%;top:40%}.n3{right:9%;top:17%}.n4{right:8%;bottom:14%}
+.work-meta { display:grid;grid-template-columns:1fr .75fr;gap:32px;padding:26px 28px 30px;border-top:1px solid var(--dark-line)}.work-meta span{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#7f7a82}.work-meta h3{font-size:26px;line-height:1.05;letter-spacing:-.04em;margin:6px 0 0}.work-meta p{margin:0;color:#746f77}
+.proof-strip { margin-top: 18px; padding: 56px; border-radius: var(--radius); background: var(--coral); display: grid; grid-template-columns: 80px 1fr 220px; gap: 26px; align-items: end; }
+.quote-mark { font-size: 110px; line-height: .6; font-weight: 700; }
+.proof-strip blockquote { margin: 0; font-size: clamp(30px,4vw,56px);line-height:1.02;letter-spacing:-.05em;font-weight:650;max-width:850px}.quote-source{display:flex;flex-direction:column;font-size:11px;text-transform:uppercase;letter-spacing:.06em}.quote-source span{opacity:.55;margin-top:4px}
+
+.about { padding: 130px 0 145px; }
+.about-main h2 { font-size: clamp(50px,6.7vw,96px);line-height:.93;letter-spacing:-.065em;margin:0;max-width:900px}.about-lede{font-size:clamp(20px,2.1vw,29px);line-height:1.4;max-width:870px;margin:42px 0 70px;color:rgba(10,18,25,.7)}
+.principles { display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(10,18,25,.22); }
+.principles article { padding: 28px 28px 0 0; min-height:230px;border-right:1px solid rgba(10,18,25,.22)}.principles article:not(:first-child){padding-left:28px}.principles article:last-child{border-right:0}.principles span{font-size:10px;letter-spacing:.1em}.principles h3{font-size:25px;line-height:1.06;letter-spacing:-.04em;margin:42px 0 12px}.principles p{margin:0;color:rgba(10,18,25,.64)}
+
+.contact { padding: 138px 0 0; position:relative;overflow:hidden; }
+.contact-orb { position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,111,104,.26),rgba(255,111,104,0) 66%);right:-250px;top:-120px; }
+.contact-grid { display:grid;grid-template-columns:1fr .85fr;gap:100px;position:relative;z-index:2; }
+.contact-copy h2 { font-size:clamp(50px,6.5vw,94px);line-height:.94;letter-spacing:-.065em;margin:28px 0 30px;max-width:780px}.contact-copy>p:last-child{color:#b0abb1;max-width:600px;font-size:18px}
+.contact-form { align-self:end;background:#0d171f;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 36px 90px rgba(0,0,0,.4)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.contact-form label{display:block;margin-bottom:14px}.contact-form label span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#9a959b;margin:0 0 8px 4px}.contact-form input,.contact-form textarea{width:100%;border:1px solid rgba(255,255,255,.14);background:#0d171f;color:var(--white);border-radius:14px;padding:15px 16px;outline:none;transition:border-color .2s ease,box-shadow .2s ease;resize:vertical}.contact-form input:focus,.contact-form textarea:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,111,104,.1)}.contact-form input::placeholder,.contact-form textarea::placeholder{color:#68636b}.form-button{width:100%;margin-top:4px;border:0}.form-note{color:#77727a;font-size:10px;text-align:center;margin:12px 0 0}
+.site-footer { margin-top: 120px; min-height: 118px; display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;border-top:1px solid var(--line);position:relative;z-index:2;color:#827d84;font-size:10px;text-transform:uppercase;letter-spacing:.07em}.footer-brand{color:var(--white);font-size:18px;text-transform:none;letter-spacing:-.04em}.site-footer p:nth-child(2){text-align:center}.site-footer p:last-child{text-align:right}
+
+.reveal { opacity: 0; transform: translateY(34px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.visible { opacity: 1; transform: none; }
+
+@keyframes travel { from{left:0} to{left:100%} }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(255,111,104,.38)}50%{box-shadow:0 0 0 14px rgba(255,111,104,0)} }
+@keyframes scan { 0%{transform:translateX(-110%)}60%,100%{transform:translateX(230%)} }
+@keyframes bars { from{filter:brightness(.75)}to{filter:brightness(1.25)} }
+@keyframes spin { to{transform:rotate(360deg)} }
