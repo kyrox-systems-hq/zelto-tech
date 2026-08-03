@@ -1,0 +1,10 @@
+{
+  "name": "zelto-tech-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "One-page website for Zelto Tech, configured for Firebase Hosting.",
+  "scripts": {
+    "serve": "firebase emulators:start --only hosting",
+    "deploy": "firebase deploy --only hosting"
+  }
+}
