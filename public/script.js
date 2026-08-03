@@ -1,3 +1,52 @@
+const installOfficialBranding = () => {
+  document.querySelectorAll('.brand').forEach(brand => {
+    const isFooter = brand.classList.contains('footer-brand');
+    brand.innerHTML = isFooter
+      ? '<img class="brand-logo brand-logo-white" src="assets/zelto-white-logo.svg" alt="Zelto Tech">'
+      : '<img class="brand-logo brand-logo-white" src="assets/zelto-white-logo.svg" alt="Zelto Tech"><img class="brand-logo brand-logo-dark" src="assets/zelto-dark-logo.svg" alt="" aria-hidden="true">';
+  });
+
+  const posterMark = document.querySelector('.poster-two');
+  if (posterMark) {
+    posterMark.innerHTML = '<img class="poster-logo-mark" src="assets/favicon.svg" alt="">';
+  }
+};
+
+const installFizzyFunkWork = async () => {
+  const featuredWork = document.querySelector('.work-card-wide');
+  if (!featuredWork) return;
+
+  try {
+    const parts = await Promise.all(
+      [0, 1, 2, 3, 4].map(async index => {
+        const response = await fetch(`assets/fizzy-data-${index}.txt`);
+        if (!response.ok) throw new Error(`Fizzy Funk asset ${index} failed to load`);
+        return response.text();
+      })
+    );
+
+    const imageSource = `data:image/jpeg;base64,${parts.join('').replace(/\s/g, '')}`;
+    featuredWork.innerHTML = `
+      <div class="work-visual fizzy-work">
+        <img src="${imageSource}" alt="Fizzy Funk fruit drink packaging shown across four colourful cans">
+        <div class="fizzy-overlay">
+          <span>Brand system · Packaging · Campaign visuals</span>
+          <strong>Fizzy Funk</strong>
+        </div>
+        <div class="platform-label">Packaging design</div>
+      </div>
+      <div class="work-meta">
+        <div><span>Brand and packaging</span><h3>Fizzy Funk beverage packaging and launch creative</h3></div>
+        <p>A colourful packaging system developed across four fruit flavours, supported by product mock-ups and campaign-ready visual assets.</p>
+      </div>`;
+  } catch (error) {
+    console.warn('The Fizzy Funk work image could not be loaded.', error);
+  }
+};
+
+installOfficialBranding();
+installFizzyFunkWork();
+
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('[data-menu-button]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
