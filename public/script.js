@@ -21,18 +21,20 @@ const installFizzyFunkWork = () => {
   if (!featuredWork) return;
 
   featuredWork.innerHTML = `
-    <div class="work-visual fizzy-work">
-      <img src="assets/projects/fizzy-funk/fizzy-funk.avif" width="1800" height="1005" alt="Fizzy Funk packaging system across four colourful fruit drink flavours" fetchpriority="high">
-      <div class="fizzy-overlay">
-        <span>Brand system · Packaging · Campaign visuals</span>
-        <strong>Fizzy Funk</strong>
+    <a href="work/fizzy-funk-packaging/" aria-label="View the Fizzy Funk packaging project" style="display:block;height:100%;color:inherit">
+      <div class="work-visual fizzy-work">
+        <img src="assets/projects/fizzy-funk/fizzy-funk.avif" width="1800" height="1005" alt="Fizzy Funk packaging system across four colourful fruit drink flavours" fetchpriority="high">
+        <div class="fizzy-overlay">
+          <span>Brand system · Packaging · Campaign visuals</span>
+          <strong>Fizzy Funk</strong>
+        </div>
+        <div class="platform-label">View project ↗</div>
       </div>
-      <div class="platform-label">Packaging design</div>
-    </div>
-    <div class="work-meta">
-      <div><span>Brand and packaging</span><h3>Fizzy Funk beverage packaging and launch creative</h3></div>
-      <p>A colourful packaging system developed across four fruit flavours, supported by product mock-ups and campaign-ready visual assets.</p>
-    </div>`;
+      <div class="work-meta">
+        <div><span>Brand and packaging</span><h3>Fizzy Funk beverage packaging and launch creative</h3></div>
+        <p>A colourful packaging system developed across four fruit flavours, supported by product mock-ups and campaign-ready visual assets.</p>
+      </div>
+    </a>`;
 };
 
 const installMedsAttireCaseStudy = () => {
