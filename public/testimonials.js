@@ -18,7 +18,7 @@ const installTestimonials = () => {
           <span class="testimonial-initials" aria-hidden="true">MN</span>
           <div><strong>Musa N.</strong><small>LinkedIn recommendation</small></div>
         </div>
-        <blockquote>“Suhayb is always interested in generating the best quality work. His analytical mindset helped our campaigns and decisions directly, and he quickly progressed to managing the email marketing team.”</blockquote>
+        <blockquote>“Suhayb is always someone who is interested in generating the best quality work for any given project or assignment. He is extremely coachable and adaptive, his analytical mindset and skills helped our campaigns and decisions directly.”</blockquote>
         <details>
           <summary>Read full recommendation</summary>
           <p>Suhayb is always someone who is interested in generating the best quality work for any given project or assignment. He is extremely coachable and adaptive, his analytical mindset and skills helped our campaigns and decisions directly. He is always focused on end result and presentation. In a very short span of time he was able to climb up the ladder and manage the entire email marketing team in our marketing division. I would highly recommend Suhayb to companies that are looking for candidates who are self starters and self motivated to produce the best results.</p>
@@ -29,7 +29,7 @@ const installTestimonials = () => {
           <span class="testimonial-initials" aria-hidden="true">VA</span>
           <div><strong>Veronika Atayi</strong><small>LinkedIn recommendation</small></div>
         </div>
-        <blockquote>“Suhayb was an excellent colleague who I managed directly. He was a good team player, communicated well and contributed ideas that improved workplace processes.”</blockquote>
+        <blockquote>“Suhayb was an excellent colleague who I managed directly. He is a good team player, he had excellent communication skills, and he delivered quality customer service throughout his time at Subway.”</blockquote>
         <details>
           <summary>Read full recommendation</summary>
           <p>Suhayb was an excellent colleague who I managed directly. He is a good team player, he had excellent communication skills, and he delivered quality customer service throughout his time at Subway. He also demonstrated innovation and contributed to improving certain processes in the workplace.</p>
