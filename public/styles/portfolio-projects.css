@@ -1,0 +1,89 @@
+.portfolio-project-card {
+  grid-column: span 1;
+  background: var(--black);
+  color: var(--white);
+  border-color: rgba(10, 18, 25, .08);
+}
+
+.portfolio-project-card .project-card-link {
+  display: block;
+  height: 100%;
+}
+
+.portfolio-project-image {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  background: #111b23;
+}
+
+.portfolio-project-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  transition: transform .65s var(--ease);
+}
+
+.portfolio-project-card:hover .portfolio-project-image img {
+  transform: scale(1.035);
+}
+
+.project-card-action {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2;
+  padding: 10px 13px;
+  border-radius: 999px;
+  background: var(--coral);
+  color: var(--black);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.portfolio-project-card .work-meta {
+  border-top-color: rgba(255, 255, 255, .13);
+}
+
+.portfolio-project-card .work-meta span {
+  color: var(--coral);
+}
+
+.portfolio-project-card .work-meta h3 {
+  color: var(--white);
+  font-size: 32px;
+}
+
+.portfolio-project-card .work-meta p {
+  color: #aca7ad;
+}
+
+.portfolio-project-card.project-xiq .portfolio-project-image {
+  background: #07186d;
+}
+
+.portfolio-project-card.project-refined .portfolio-project-image {
+  background: #1e56b5;
+}
+
+.portfolio-project-card.project-devvolve .portfolio-project-image {
+  background: #061e20;
+}
+
+.portfolio-project-card.project-people-water .portfolio-project-image {
+  background: #063a98;
+}
+
+@media (max-width: 760px) {
+  .portfolio-project-card {
+    grid-column: auto;
+  }
+
+  .portfolio-project-image,
+  .portfolio-project-image img {
+    min-height: 300px;
+  }
+}
