@@ -1,24 +1,21 @@
-const PROJECT_IMAGE_PARTS = { xiq: 2, 'refined-vision': 2, devvolve: 2, 'people-water': 3 };
+const PROJECT_IMAGES = {
+  xiq: { src: 'assets/projects/xiq/xiq.avif', width: 2400, height: 1350 },
+  'refined-vision': { src: 'assets/projects/refined-vision/refined-vision.avif', width: 1400, height: 1167 },
+  devvolve: { src: 'assets/projects/devvolve/devvolve.avif', width: 2000, height: 1658 },
+  'people-water': { src: 'assets/projects/people-water/people-water.avif', width: 2400, height: 1340 }
+};
 
-const hydrateProjectImages = async (root = document) => {
+const hydrateProjectImages = (root = document) => {
   const base = document.body.dataset.assetBase || '';
-  const images = root.querySelectorAll('[data-project-image]');
-  await Promise.all([...images].map(async image => {
-    const project = image.dataset.projectImage;
-    const count = PROJECT_IMAGE_PARTS[project];
-    if (!count) return;
-    try {
-      const parts = await Promise.all(Array.from({ length: count }, async (_, index) => {
-        const part = String(index).padStart(2, '0');
-        const response = await fetch(`${base}assets/projects/${project}/image-${part}.txt`);
-        if (!response.ok) throw new Error(`${project} image part ${part} failed to load`);
-        return response.text();
-      }));
-      image.src = `data:image/webp;base64,${parts.join('').replace(/\s/g, '')}`;
-    } catch (error) {
-      console.warn(`The ${project} project image could not be loaded.`, error);
-    }
-  }));
+
+  root.querySelectorAll('[data-project-image]').forEach(image => {
+    const asset = PROJECT_IMAGES[image.dataset.projectImage];
+    if (!asset) return;
+    image.src = `${base}${asset.src}`;
+    image.width = asset.width;
+    image.height = asset.height;
+    image.decoding = 'async';
+  });
 };
 
 if (document.readyState === 'loading') {
