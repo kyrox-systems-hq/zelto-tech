@@ -1,8 +1,8 @@
 const PROJECT_IMAGES = {
-  xiq: { src: 'assets/projects/xiq/xiq.avif', width: 2400, height: 1350 },
-  'refined-vision': { src: 'assets/projects/refined-vision/refined-vision.avif', width: 1400, height: 1167 },
-  devvolve: { src: 'assets/projects/devvolve/devvolve.avif', width: 2000, height: 1658 },
-  'people-water': { src: 'assets/projects/people-water/people-water.avif', width: 2400, height: 1340 }
+  xiq: { src: 'assets/projects/xiq/hero-sm.webp', srcset: 'assets/projects/xiq/hero-sm.webp 800w, assets/projects/xiq/hero-lg.webp 1600w', width: 1600, height: 900 },
+  'refined-vision': { src: 'assets/projects/refined-vision/hero-sm.webp', srcset: 'assets/projects/refined-vision/hero-sm.webp 800w, assets/projects/refined-vision/hero-lg.webp 1400w', width: 1400, height: 1167 },
+  devvolve: { src: 'assets/projects/devvolve/hero-sm.webp', srcset: 'assets/projects/devvolve/hero-sm.webp 800w, assets/projects/devvolve/hero-lg.webp 1600w', width: 1600, height: 1326 },
+  'people-water': { src: 'assets/projects/people-water/hero-sm.webp', srcset: 'assets/projects/people-water/hero-sm.webp 800w, assets/projects/people-water/hero-lg.webp 1600w', width: 1600, height: 893 }
 };
 
 const hydrateProjectImages = (root = document) => {
@@ -10,6 +10,8 @@ const hydrateProjectImages = (root = document) => {
     const asset = PROJECT_IMAGES[image.dataset.projectImage];
     if (!asset) return;
     image.src = asset.src;
+    image.srcset = asset.srcset;
+    image.sizes = '(max-width: 760px) 100vw, 50vw';
     image.width = asset.width;
     image.height = asset.height;
     image.decoding = 'async';
@@ -23,7 +25,7 @@ const installFizzyFunkWork = () => {
   featuredWork.innerHTML = `
     <a href="work/fizzy-funk-packaging/" aria-label="View the Fizzy Funk packaging project" style="display:block;height:100%;color:inherit">
       <div class="work-visual fizzy-work">
-        <img src="assets/projects/fizzy-funk/fizzy-funk.avif" width="1800" height="1005" alt="Fizzy Funk packaging system across four colourful fruit drink flavours" fetchpriority="high">
+        <img src="assets/projects/fizzy-funk/hero-sm.webp" srcset="assets/projects/fizzy-funk/hero-sm.webp 800w, assets/projects/fizzy-funk/hero-lg.webp 1600w" sizes="(max-width: 760px) 100vw, 1240px" width="1600" height="893" alt="Fizzy Funk packaging system across four colourful fruit drink flavours" fetchpriority="high" decoding="async">
         <div class="fizzy-overlay">
           <span>Brand system · Packaging · Campaign visuals</span>
           <strong>Fizzy Funk</strong>

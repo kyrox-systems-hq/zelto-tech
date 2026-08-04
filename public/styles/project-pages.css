@@ -147,24 +147,3 @@ img { display: block; max-width: 100%; }
   .project-close-grid { grid-template-columns: 1fr; align-items: start; }
   .project-footer .container { flex-direction: column; }
 }
-
-.gallery-sprite-tile {
-  margin: 0;
-  overflow: hidden;
-  border-radius: var(--radius);
-  aspect-ratio: 4 / 3;
-  background-color: #101b24;
-  background-repeat: no-repeat;
-}
-.sprite-xiq { background-image: url('../assets/projects/xiq/gallery-sprite.jpg'); background-size: 200% 200%; }
-.sprite-refined { background-image: url('../assets/projects/refined-vision/gallery-sprite.jpg'); background-size: 200% 200%; }
-.sprite-devvolve { background-image: url('../assets/projects/devvolve/gallery-sprite.jpg'); background-size: 200% 200%; }
-.sprite-people { background-image: url('../assets/projects/people-water/gallery-sprite.jpg'); background-size: 200% 200%; }
-.sprite-fizzy { background-image: url('../assets/projects/fizzy-funk/gallery-sprite.jpg'); background-size: 200% 300%; }
-.gallery-sprite-tile.tile-0 { background-position: 0 0; }
-.gallery-sprite-tile.tile-1 { background-position: 100% 0; }
-.gallery-sprite-tile.tile-2 { background-position: 0 100%; }
-.gallery-sprite-tile.tile-3 { background-position: 100% 100%; }
-.sprite-fizzy.tile-2 { background-position: 0 50%; }
-.sprite-fizzy.tile-3 { background-position: 100% 50%; }
-.sprite-fizzy.tile-4 { background-position: 0 100%; }
