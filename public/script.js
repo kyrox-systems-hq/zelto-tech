@@ -204,3 +204,5 @@ contactForm?.addEventListener('submit', event => {
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nWhat they are trying to achieve:\n${message}`);
   window.location.href = `mailto:suhayb@lcmb.co.uk?subject=${subject}&body=${body}`;
 });
+
+import('./testimonials.js').catch(error => console.error('Testimonials failed to load', error));
