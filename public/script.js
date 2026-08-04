@@ -1,3 +1,26 @@
+const PROJECT_IMAGE_PARTS = { xiq: 2, 'refined-vision': 2, devvolve: 2, 'people-water': 3 };
+
+const hydrateProjectImages = async (root = document) => {
+  const images = root.querySelectorAll('[data-project-image]');
+  await Promise.all([...images].map(async image => {
+    const project = image.dataset.projectImage;
+    const count = PROJECT_IMAGE_PARTS[project];
+    if (!count) return;
+    const base = image.dataset.assetBase || document.body.dataset.assetBase || '';
+    try {
+      const parts = await Promise.all(Array.from({ length: count }, async (_, index) => {
+        const part = String(index).padStart(2, '0');
+        const response = await fetch(`${base}assets/projects/${project}/image-${part}.txt`);
+        if (!response.ok) throw new Error(`${project} image part ${part} failed to load`);
+        return response.text();
+      }));
+      image.src = `data:image/webp;base64,${parts.join('').replace(/\s/g, '')}`;
+    } catch (error) {
+      console.warn(`The ${project} project image could not be loaded.`, error);
+    }
+  }));
+};
+
 const installFizzyFunkWork = async () => {
   const featuredWork = document.querySelector('.work-card-wide');
   if (!featuredWork) return;
@@ -76,7 +99,7 @@ const installPortfolioProjects = () => {
       title: 'xiQ',
       category: 'Brand identity · Campaign system',
       description: 'A high-contrast identity and multi-channel creative system for an AI-powered revenue platform.',
-      image: 'assets/projects/xiq/hero.webp',
+      asset: 'xiq',
       className: 'project-xiq'
     },
     {
@@ -84,7 +107,7 @@ const installPortfolioProjects = () => {
       title: 'Refined Vision',
       category: 'Product design · Art direction',
       description: 'A premium eyewear concept developed through product visualisation, editorial layouts and social creative.',
-      image: 'assets/projects/refined-vision/hero.webp',
+      asset: 'refined-vision',
       className: 'project-refined'
     },
     {
@@ -92,7 +115,7 @@ const installPortfolioProjects = () => {
       title: 'DevVolve',
       category: 'Technology brand identity',
       description: 'A modular geometric identity designed to work across digital products, outdoor media and apparel.',
-      image: 'assets/projects/devvolve/hero.webp',
+      asset: 'devvolve',
       className: 'project-devvolve'
     },
     {
@@ -100,7 +123,7 @@ const installPortfolioProjects = () => {
       title: 'People Water',
       category: 'Product identity · Packaging',
       description: 'A bold bottled-water system extended across packaging, retail, campaign and delivery touchpoints.',
-      image: 'assets/projects/people-water/hero.webp',
+      asset: 'people-water',
       className: 'project-people-water'
     }
   ];
@@ -112,7 +135,7 @@ const installPortfolioProjects = () => {
     <article class="work-card portfolio-project-card ${project.className}">
       <a class="project-card-link" href="work/${project.slug}/" aria-label="View the ${project.title} project">
         <div class="portfolio-project-image">
-          <img src="${project.image}" alt="${project.title} selected project visual" loading="lazy">
+          <img data-project-image="${project.asset}" alt="${project.title} selected project visual" loading="lazy">
           <span class="project-card-action">View project ↗</span>
         </div>
         <div class="work-meta">
@@ -123,6 +146,7 @@ const installPortfolioProjects = () => {
     </article>`).join('');
 
   workGrid.appendChild(wrapper);
+  hydrateProjectImages(wrapper);
 
   const workIntro = document.querySelector('#work .section-heading p:last-child');
   if (workIntro) {
