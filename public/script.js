@@ -1,57 +1,38 @@
-const PROJECT_IMAGE_PARTS = { xiq: 2, 'refined-vision': 2, devvolve: 2, 'people-water': 3 };
-
-const hydrateProjectImages = async (root = document) => {
-  const images = root.querySelectorAll('[data-project-image]');
-  await Promise.all([...images].map(async image => {
-    const project = image.dataset.projectImage;
-    const count = PROJECT_IMAGE_PARTS[project];
-    if (!count) return;
-    const base = image.dataset.assetBase || document.body.dataset.assetBase || '';
-    try {
-      const parts = await Promise.all(Array.from({ length: count }, async (_, index) => {
-        const part = String(index).padStart(2, '0');
-        const response = await fetch(`${base}assets/projects/${project}/image-${part}.txt`);
-        if (!response.ok) throw new Error(`${project} image part ${part} failed to load`);
-        return response.text();
-      }));
-      image.src = `data:image/webp;base64,${parts.join('').replace(/\s/g, '')}`;
-    } catch (error) {
-      console.warn(`The ${project} project image could not be loaded.`, error);
-    }
-  }));
+const PROJECT_IMAGES = {
+  xiq: { src: 'assets/projects/xiq/xiq.avif', width: 2400, height: 1350 },
+  'refined-vision': { src: 'assets/projects/refined-vision/refined-vision.avif', width: 1400, height: 1167 },
+  devvolve: { src: 'assets/projects/devvolve/devvolve.avif', width: 2000, height: 1658 },
+  'people-water': { src: 'assets/projects/people-water/people-water.avif', width: 2400, height: 1340 }
 };
 
-const installFizzyFunkWork = async () => {
+const hydrateProjectImages = (root = document) => {
+  root.querySelectorAll('[data-project-image]').forEach(image => {
+    const asset = PROJECT_IMAGES[image.dataset.projectImage];
+    if (!asset) return;
+    image.src = asset.src;
+    image.width = asset.width;
+    image.height = asset.height;
+    image.decoding = 'async';
+  });
+};
+
+const installFizzyFunkWork = () => {
   const featuredWork = document.querySelector('.work-card-wide');
   if (!featuredWork) return;
 
-  try {
-    const parts = await Promise.all(
-      [0, 1, 2, 3, 4, 5].map(async index => {
-        const part = String(index).padStart(2, '0');
-        const response = await fetch(`assets/fizzy-showcase-${part}.txt`);
-        if (!response.ok) throw new Error(`Fizzy Funk asset ${index} failed to load`);
-        return response.text();
-      })
-    );
-
-    const imageSource = `data:image/jpeg;base64,${parts.join('').replace(/\s/g, '')}`;
-    featuredWork.innerHTML = `
-      <div class="work-visual fizzy-work">
-        <img src="${imageSource}" alt="Fizzy Funk fruit drink packaging shown across four colourful cans">
-        <div class="fizzy-overlay">
-          <span>Brand system · Packaging · Campaign visuals</span>
-          <strong>Fizzy Funk</strong>
-        </div>
-        <div class="platform-label">Packaging design</div>
+  featuredWork.innerHTML = `
+    <div class="work-visual fizzy-work">
+      <img src="assets/projects/fizzy-funk/fizzy-funk.avif" width="1800" height="1005" alt="Fizzy Funk packaging system across four colourful fruit drink flavours" fetchpriority="high">
+      <div class="fizzy-overlay">
+        <span>Brand system · Packaging · Campaign visuals</span>
+        <strong>Fizzy Funk</strong>
       </div>
-      <div class="work-meta">
-        <div><span>Brand and packaging</span><h3>Fizzy Funk beverage packaging and launch creative</h3></div>
-        <p>A colourful packaging system developed across four fruit flavours, supported by product mock-ups and campaign-ready visual assets.</p>
-      </div>`;
-  } catch (error) {
-    console.warn('The Fizzy Funk work image could not be loaded.', error);
-  }
+      <div class="platform-label">Packaging design</div>
+    </div>
+    <div class="work-meta">
+      <div><span>Brand and packaging</span><h3>Fizzy Funk beverage packaging and launch creative</h3></div>
+      <p>A colourful packaging system developed across four fruit flavours, supported by product mock-ups and campaign-ready visual assets.</p>
+    </div>`;
 };
 
 const installMedsAttireCaseStudy = () => {
@@ -94,38 +75,10 @@ const installPortfolioProjects = () => {
   if (!workGrid || workGrid.querySelector('[data-added-projects]')) return;
 
   const projects = [
-    {
-      slug: 'xiq-brand-system',
-      title: 'xiQ',
-      category: 'Brand identity · Campaign system',
-      description: 'A high-contrast identity and multi-channel creative system for an AI-powered revenue platform.',
-      asset: 'xiq',
-      className: 'project-xiq'
-    },
-    {
-      slug: 'refined-vision-product-design',
-      title: 'Refined Vision',
-      category: 'Product design · Art direction',
-      description: 'A premium eyewear concept developed through product visualisation, editorial layouts and social creative.',
-      asset: 'refined-vision',
-      className: 'project-refined'
-    },
-    {
-      slug: 'devvolve-brand-identity',
-      title: 'DevVolve',
-      category: 'Technology brand identity',
-      description: 'A modular geometric identity designed to work across digital products, outdoor media and apparel.',
-      asset: 'devvolve',
-      className: 'project-devvolve'
-    },
-    {
-      slug: 'people-water-product-design',
-      title: 'People Water',
-      category: 'Product identity · Packaging',
-      description: 'A bold bottled-water system extended across packaging, retail, campaign and delivery touchpoints.',
-      asset: 'people-water',
-      className: 'project-people-water'
-    }
+    { slug: 'xiq-brand-system', title: 'xiQ', category: 'Brand identity · Campaign system', description: 'A high-contrast identity and multi-channel creative system for an AI-powered revenue platform.', asset: 'xiq', className: 'project-xiq' },
+    { slug: 'refined-vision-product-design', title: 'Refined Vision', category: 'Product design · Art direction', description: 'A premium eyewear concept developed through product visualisation, editorial layouts and social creative.', asset: 'refined-vision', className: 'project-refined' },
+    { slug: 'devvolve-brand-identity', title: 'DevVolve', category: 'Technology brand identity', description: 'A modular geometric identity designed to work across digital products, outdoor media and apparel.', asset: 'devvolve', className: 'project-devvolve' },
+    { slug: 'people-water-product-design', title: 'People Water', category: 'Product identity · Packaging', description: 'A bold bottled-water system extended across packaging, retail, campaign and delivery touchpoints.', asset: 'people-water', className: 'project-people-water' }
   ];
 
   const wrapper = document.createElement('div');
@@ -149,9 +102,7 @@ const installPortfolioProjects = () => {
   hydrateProjectImages(wrapper);
 
   const workIntro = document.querySelector('#work .section-heading p:last-child');
-  if (workIntro) {
-    workIntro.textContent = 'Zelto Tech is a new name, not a team starting from zero. Our experience spans paid media, B2B campaigns, automation, brand identity, packaging and product-led creative.';
-  }
+  if (workIntro) workIntro.textContent = 'Zelto Tech is a new name, not a team starting from zero. Our experience spans paid media, B2B campaigns, automation, brand identity, packaging and product-led creative.';
 };
 
 installFizzyFunkWork();
@@ -165,9 +116,7 @@ const revealItems = document.querySelectorAll('.reveal');
 const workflowSteps = document.querySelectorAll('[data-step]');
 const workflowRail = document.querySelector('.workflow-rail i');
 
-const updateHeader = () => {
-  header?.classList.toggle('scrolled', window.scrollY > 42);
-};
+const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 42);
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
@@ -177,6 +126,7 @@ menuButton?.addEventListener('click', () => {
   menuButton.setAttribute('aria-expanded', String(open));
   document.body.classList.toggle('menu-open', open);
 });
+
 mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   mobileMenu.classList.remove('open');
   menuButton?.setAttribute('aria-expanded', 'false');
@@ -227,12 +177,7 @@ if (parallax && window.matchMedia('(pointer:fine)').matches && !window.matchMedi
 }
 
 const names = ['Amelia', 'Farhan', 'Rachel', 'Daniel'];
-const signals = [
-  'Northstar is entering the healthcare market',
-  'your team is hiring for international growth',
-  'you recently launched a new B2B product',
-  'your paid media mix is shifting towards search'
-];
+const signals = ['Northstar is entering the healthcare market', 'your team is hiring for international growth', 'you recently launched a new B2B product', 'your paid media mix is shifting towards search'];
 let messageIndex = 0;
 const nameTarget = document.querySelector('[data-person-name]');
 const signalTarget = document.querySelector('[data-person-signal]');
