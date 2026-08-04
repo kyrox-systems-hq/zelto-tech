@@ -1,17 +1,3 @@
-const installOfficialBranding = () => {
-  document.querySelectorAll('.brand').forEach(brand => {
-    const isFooter = brand.classList.contains('footer-brand');
-    brand.innerHTML = isFooter
-      ? '<img class="brand-logo brand-logo-white" src="assets/zelto-white-logo.svg" alt="Zelto Tech">'
-      : '<img class="brand-logo brand-logo-white" src="assets/zelto-white-logo.svg" alt="Zelto Tech"><img class="brand-logo brand-logo-dark" src="assets/zelto-dark-logo.svg" alt="" aria-hidden="true">';
-  });
-
-  const posterMark = document.querySelector('.poster-two');
-  if (posterMark) {
-    posterMark.innerHTML = '<img class="poster-logo-mark" src="assets/favicon.svg" alt="">';
-  }
-};
-
 const installFizzyFunkWork = async () => {
   const featuredWork = document.querySelector('.work-card-wide');
   if (!featuredWork) return;
@@ -80,9 +66,73 @@ const installMedsAttireCaseStudy = () => {
   featuredWork.insertAdjacentElement('afterend', caseStudy);
 };
 
-installOfficialBranding();
+const installPortfolioProjects = () => {
+  const workGrid = document.querySelector('.work-grid');
+  if (!workGrid || workGrid.querySelector('[data-added-projects]')) return;
+
+  const projects = [
+    {
+      slug: 'xiq-brand-system',
+      title: 'xiQ',
+      category: 'Brand identity · Campaign system',
+      description: 'A high-contrast identity and multi-channel creative system for an AI-powered revenue platform.',
+      image: 'assets/projects/xiq/hero.webp',
+      className: 'project-xiq'
+    },
+    {
+      slug: 'refined-vision-product-design',
+      title: 'Refined Vision',
+      category: 'Product design · Art direction',
+      description: 'A premium eyewear concept developed through product visualisation, editorial layouts and social creative.',
+      image: 'assets/projects/refined-vision/hero.webp',
+      className: 'project-refined'
+    },
+    {
+      slug: 'devvolve-brand-identity',
+      title: 'DevVolve',
+      category: 'Technology brand identity',
+      description: 'A modular geometric identity designed to work across digital products, outdoor media and apparel.',
+      image: 'assets/projects/devvolve/hero.webp',
+      className: 'project-devvolve'
+    },
+    {
+      slug: 'people-water-product-design',
+      title: 'People Water',
+      category: 'Product identity · Packaging',
+      description: 'A bold bottled-water system extended across packaging, retail, campaign and delivery touchpoints.',
+      image: 'assets/projects/people-water/hero.webp',
+      className: 'project-people-water'
+    }
+  ];
+
+  const wrapper = document.createElement('div');
+  wrapper.setAttribute('data-added-projects', 'true');
+  wrapper.style.display = 'contents';
+  wrapper.innerHTML = projects.map(project => `
+    <article class="work-card portfolio-project-card ${project.className}">
+      <a class="project-card-link" href="work/${project.slug}/" aria-label="View the ${project.title} project">
+        <div class="portfolio-project-image">
+          <img src="${project.image}" alt="${project.title} selected project visual" loading="lazy">
+          <span class="project-card-action">View project ↗</span>
+        </div>
+        <div class="work-meta">
+          <div><span>${project.category}</span><h3>${project.title}</h3></div>
+          <p>${project.description}</p>
+        </div>
+      </a>
+    </article>`).join('');
+
+  workGrid.appendChild(wrapper);
+
+  const workIntro = document.querySelector('#work .section-heading p:last-child');
+  if (workIntro) {
+    workIntro.textContent = 'Zelto Tech is a new name, not a team starting from zero. Our experience spans paid media, B2B campaigns, automation, brand identity, packaging and product-led creative.';
+  }
+};
+
 installFizzyFunkWork();
 installMedsAttireCaseStudy();
+installPortfolioProjects();
 
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('[data-menu-button]');
