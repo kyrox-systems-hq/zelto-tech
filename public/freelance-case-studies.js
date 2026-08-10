@@ -1,19 +1,11 @@
 const MARLENE_PHOTO = 'https://telehealth.org/wp-content/uploads/2025/05/Marlene-M.-Maheu.jpg';
+const QORDATA_LOGO = 'https://cdn.theorg.com/ec654518-cf1b-4c04-9d14-591eb4ea0506_medium.jpg';
+const TELEHEALTH_LOGO = 'https://mma.prnewswire.com/media/2678957/Telehealth_org_logo.jpg?p=facebook';
 
 const clientAvatar = (className = '') => `
   <div class="client-avatar ${className}">
     <span aria-hidden="true">MM</span>
     <img src="${MARLENE_PHOTO}" alt="Marlene M. Maheu, PhD" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-  </div>`;
-
-const metricDashboard = ({ title, status, metrics, flow, chartClass = '' }) => `
-  <div class="client-case-dashboard ${chartClass}">
-    <div class="dashboard-head"><strong>${title}</strong><span>${status}</span></div>
-    <div class="dashboard-metrics">
-      ${metrics.map(metric => `<div class="dashboard-metric"><span>${metric.label}</span><strong>${metric.value}</strong></div>`).join('')}
-    </div>
-    <div class="dashboard-chart" aria-hidden="true">${'<i></i>'.repeat(10)}</div>
-    <div class="dashboard-flow">${flow.map(item => `<span>${item}</span>`).join('')}</div>
   </div>`;
 
 const installNamedFreelanceCases = () => {
@@ -23,25 +15,31 @@ const installNamedFreelanceCases = () => {
 
   if (qordataCard && !qordataCard.dataset.namedClientCase) {
     qordataCard.dataset.namedClientCase = 'qordata';
-    qordataCard.classList.add('client-case-card', 'client-case-qordata');
+    qordataCard.classList.add('client-case-card', 'client-case-qordata', 'work-card-wide');
     qordataCard.innerHTML = `
       <a class="client-case-link" href="work/qordata-b2b-advertising/" aria-label="View the Qordata B2B advertising case study">
-        <div class="client-case-visual qordata-case-visual">
-          <div class="client-case-copy-panel">
-            <div class="client-case-topline"><span>qordata</span><span>B2B compliance software · 2022</span></div>
-            <div class="client-case-result"><strong>+17%</strong><span>qualified leads</span></div>
-            <div class="client-case-channels"><span>LinkedIn Ads</span><span>Google Search</span><span>Lead Magnets</span><span>Retargeting</span></div>
+        <div class="client-case-cover qordata-cover">
+          <div class="brand-cover-copy">
+            <div class="brand-logo-plate qordata-logo-plate">
+              <img src="${QORDATA_LOGO}" alt="qordata" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+            </div>
+            <p class="brand-cover-kicker">B2B demand generation · Life sciences compliance</p>
+            <h3>From paid attention to commercially useful leads.</h3>
+            <div class="brand-cover-stat"><strong>+17%</strong><span>qualified leads</span></div>
+            <div class="brand-cover-chips"><span>LinkedIn Ads</span><span>Google Search</span><span>Lead Magnets</span><span>Retargeting</span></div>
           </div>
-          ${metricDashboard({
-            title: 'Demand generation cockpit',
-            status: 'Commercial lead quality',
-            metrics: [
-              { label: 'Qualified leads', value: '+17%' },
-              { label: 'Core channels', value: '2' },
-              { label: 'Funnel focus', value: 'B2B' }
-            ],
-            flow: ['Decision-maker audience', 'Search intent', 'Lead magnet', 'Qualified lead']
-          })}
+          <div class="qordata-cover-system" aria-hidden="true">
+            <div class="qd-screen">
+              <div class="qd-screen-head"><span>Campaign architecture</span><i>LIVE</i></div>
+              <div class="qd-audience-row"><b>01</b><div><span>Decision-maker audience</span><strong>Commercial compliance roles</strong></div><em>LinkedIn</em></div>
+              <div class="qd-audience-row"><b>02</b><div><span>Active intent</span><strong>Search demand</strong></div><em>Google</em></div>
+              <div class="qd-audience-row"><b>03</b><div><span>Conversion asset</span><strong>Lead magnet</strong></div><em>Content</em></div>
+              <div class="qd-audience-row qualified"><b>04</b><div><span>Commercial outcome</span><strong>Qualified lead</strong></div><em>+17%</em></div>
+            </div>
+            <div class="qd-orbit orbit-a"></div><div class="qd-orbit orbit-b"></div>
+            <div class="qd-data-pill pill-a">High-intent search</div>
+            <div class="qd-data-pill pill-b">Retargeting</div>
+          </div>
           <div class="platform-label">View case study ↗</div>
         </div>
         <div class="work-meta">
@@ -53,29 +51,35 @@ const installNamedFreelanceCases = () => {
 
   if (telehealthCard && !telehealthCard.dataset.namedClientCase) {
     telehealthCard.dataset.namedClientCase = 'telehealth';
-    telehealthCard.classList.add('client-case-card', 'client-case-telehealth');
+    telehealthCard.classList.add('client-case-card', 'client-case-telehealth', 'work-card-wide');
     telehealthCard.innerHTML = `
       <a class="client-case-link" href="work/telehealth-growth-marketing/" aria-label="View the Telehealth.org growth marketing case study">
-        <div class="client-case-visual telehealth-case-visual">
-          <div class="client-case-copy-panel">
-            <div class="client-case-topline"><span>Telehealth.org</span><span>Growth acquisition · 2022</span></div>
-            <div class="client-case-result"><strong>400%</strong><span>ROI on roughly $10K monthly media spend</span></div>
-            <div class="telehealth-card-client">
-              ${clientAvatar('client-avatar-small')}
-              <div><strong>Marlene M. Maheu, PhD</strong><span>Founder & CEO · Telehealth.org</span></div>
+        <div class="client-case-cover telehealth-cover">
+          <div class="brand-cover-copy telehealth-copy">
+            <div class="brand-logo-plate telehealth-logo-plate">
+              <img src="${TELEHEALTH_LOGO}" alt="Telehealth.org" loading="lazy" decoding="async" referrerpolicy="no-referrer">
             </div>
-            <div class="client-case-channels"><span>Google Ads</span><span>Google Grant</span><span>LinkedIn</span><span>Landing Pages</span></div>
+            <p class="brand-cover-kicker">Paid growth · Education and virtual care</p>
+            <h3>Paid, grant and landing-page acquisition working as one system.</h3>
+            <div class="telehealth-proof-row">
+              <div class="brand-cover-stat"><strong>400%</strong><span>ROI</span></div>
+              <div class="brand-cover-stat secondary"><strong>~$10K</strong><span>monthly media</span></div>
+            </div>
+            <div class="brand-cover-chips"><span>Google Ads</span><span>Google Grant</span><span>LinkedIn</span><span>Landing Pages</span></div>
           </div>
-          ${metricDashboard({
-            title: 'Acquisition system',
-            status: 'Paid + grant + conversion',
-            metrics: [
-              { label: 'ROI', value: '400%' },
-              { label: 'Monthly media', value: '~$10K' },
-              { label: 'Landing pages', value: '5' }
-            ],
-            flow: ['Paid search', 'Grant media', 'Landing page', 'Training demand']
-          })}
+          <div class="telehealth-cover-system">
+            <div class="telehealth-orbit" aria-hidden="true">
+              <div class="th-node node-search"><span>Search</span><strong>Paid intent</strong></div>
+              <div class="th-node node-grant"><span>Grant</span><strong>Qualified reach</strong></div>
+              <div class="th-node node-linkedin"><span>LinkedIn</span><strong>B2B audience</strong></div>
+              <div class="th-core"><strong>5</strong><span>landing pages</span></div>
+              <div class="th-node node-return"><span>Return</span><strong>400% ROI</strong></div>
+            </div>
+            <div class="telehealth-client-panel">
+              ${clientAvatar('client-avatar-cover')}
+              <div><span>Client</span><strong>Marlene M. Maheu, PhD</strong><small>Founder · Telehealth.org</small></div>
+            </div>
+          </div>
           <div class="platform-label">View case study ↗</div>
         </div>
         <div class="work-meta">
@@ -89,11 +93,14 @@ const installNamedFreelanceCases = () => {
     proof.dataset.telehealthProof = 'true';
     proof.classList.add('telehealth-proof');
     proof.innerHTML = `
-      ${clientAvatar('client-avatar-proof')}
+      <div class="testimonial-brand-lockup">
+        <div class="brand-logo-plate testimonial-logo"><img src="${TELEHEALTH_LOGO}" alt="Telehealth.org" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div>
+        ${clientAvatar('client-avatar-proof')}
+      </div>
       <blockquote>Refreshingly professional and on-point. We look forward to working with Suhayb in the future.</blockquote>
       <div class="quote-source">
         <strong>Marlene M. Maheu, PhD</strong>
-        <span>Founder & CEO · Telehealth.org</span>
+        <span>Founder · Telehealth.org</span>
         <small>Client feedback after the Telehealth.org growth marketing engagement</small>
       </div>`;
   }
