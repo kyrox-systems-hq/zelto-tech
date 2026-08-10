@@ -1,0 +1,324 @@
+:root {
+  --qd-purple:#64236f;
+  --qd-purple-dark:#24132b;
+  --qd-lilac:#f4eaf6;
+  --qd-mint:#b5f4d8;
+  --th-blue:#2455d6;
+  --th-blue-dark:#102d73;
+  --th-cyan:#66d2df;
+  --th-pale:#eaf4ff;
+  --case-ink:#0a1219;
+  --case-paper:#f8f7f3;
+  --case-white:#fff;
+  --case-line:rgba(10,18,25,.14);
+  --case-light-line:rgba(255,255,255,.15);
+  --case-muted:#6f6971;
+  --case-max:1240px;
+}
+
+/* Homepage project covers */
+.client-case-card.work-card-wide { grid-column:1 / -1; }
+.client-case-cover { position:relative; min-height:600px; display:grid; grid-template-columns:.86fr 1.14fr; overflow:hidden; }
+.brand-cover-copy { position:relative; z-index:4; padding:clamp(34px,5vw,68px); display:flex; flex-direction:column; justify-content:center; }
+.brand-logo-plate { display:inline-flex; align-items:center; justify-content:center; width:max-content; overflow:hidden; border-radius:16px; background:#fff; box-shadow:0 18px 45px rgba(10,18,25,.13); }
+.brand-logo-plate img { display:block; width:100%; height:100%; object-fit:contain; }
+.qordata-logo-plate { width:170px; height:90px; padding:5px 14px; }
+.telehealth-logo-plate { width:210px; height:82px; padding:10px 14px; }
+.brand-cover-kicker { margin:30px 0 0; font-size:9px; font-weight:760; letter-spacing:.12em; text-transform:uppercase; opacity:.64; }
+.brand-cover-copy h3 { max-width:680px; margin:16px 0 0; font-size:clamp(40px,4.8vw,72px); line-height:.92; letter-spacing:-.06em; }
+.brand-cover-stat { margin-top:38px; display:flex; align-items:flex-end; gap:14px; }
+.brand-cover-stat strong { font-size:clamp(72px,9vw,128px); line-height:.7; letter-spacing:-.085em; }
+.brand-cover-stat span { padding-bottom:8px; font-size:13px; font-weight:720; }
+.brand-cover-stat.secondary strong { font-size:clamp(48px,6vw,78px); }
+.brand-cover-chips { display:flex; flex-wrap:wrap; gap:7px; margin-top:30px; }
+.brand-cover-chips span { padding:8px 10px; border:1px solid currentColor; border-radius:999px; font-size:8px; font-weight:760; letter-spacing:.08em; text-transform:uppercase; opacity:.72; }
+.qordata-cover { background:linear-gradient(132deg,#fbf6fc 0 43%,#52215c 43% 100%); color:#24132b; }
+.qordata-cover .brand-cover-stat strong { color:var(--qd-purple); }
+.qordata-cover-system { position:relative; min-width:0; min-height:600px; display:grid; place-items:center; overflow:hidden; background:radial-gradient(circle at 60% 45%,rgba(181,244,216,.18),transparent 33%),linear-gradient(160deg,#52215c,#24132b); }
+.qd-screen { position:relative; z-index:3; width:min(78%,720px); padding:20px; border:1px solid rgba(255,255,255,.15); border-radius:28px; background:rgba(21,13,26,.75); color:#fff; box-shadow:0 40px 90px rgba(0,0,0,.32); backdrop-filter:blur(16px); transform:rotate(-2deg); }
+.qd-screen-head { display:flex; justify-content:space-between; gap:20px; align-items:center; padding:0 2px 15px; border-bottom:1px solid rgba(255,255,255,.13); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+.qd-screen-head i { padding:5px 8px; border-radius:999px; background:var(--qd-mint); color:#163126; font-style:normal; font-size:7px; font-weight:800; }
+.qd-audience-row { display:grid; grid-template-columns:35px 1fr auto; gap:14px; align-items:center; padding:17px 0; border-bottom:1px solid rgba(255,255,255,.1); }
+.qd-audience-row b { width:30px; height:30px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.17); border-radius:50%; color:#bca4c2; font-size:8px; }
+.qd-audience-row span,.qd-audience-row strong { display:block; }
+.qd-audience-row span { color:#8f8094; font-size:8px; letter-spacing:.08em; text-transform:uppercase; }
+.qd-audience-row strong { margin-top:3px; font-size:14px; }
+.qd-audience-row em { color:#bda4c2; font-size:9px; font-style:normal; }
+.qd-audience-row.qualified { border-bottom:0; }
+.qd-audience-row.qualified b,.qd-audience-row.qualified em { color:var(--qd-mint); }
+.qd-orbit { position:absolute; border:1px solid rgba(255,255,255,.08); border-radius:50%; }
+.qd-orbit.orbit-a { width:510px; height:510px; right:-90px; top:-80px; }
+.qd-orbit.orbit-b { width:320px; height:320px; right:10px; top:20px; }
+.qd-data-pill { position:absolute; z-index:4; padding:10px 12px; border-radius:999px; background:#fff; color:var(--qd-purple-dark); box-shadow:0 15px 38px rgba(0,0,0,.18); font-size:9px; font-weight:760; }
+.qd-data-pill.pill-a { right:5%; top:17%; }
+.qd-data-pill.pill-b { left:4%; bottom:15%; }
+.telehealth-cover { background:linear-gradient(125deg,#f4f9ff 0 46%,#143b98 46% 100%); color:#102d73; }
+.telehealth-copy { justify-content:center; }
+.telehealth-proof-row { display:flex; flex-wrap:wrap; gap:35px; align-items:flex-end; }
+.telehealth-cover .brand-cover-stat strong { color:var(--th-blue); }
+.telehealth-cover-system { position:relative; min-height:600px; overflow:hidden; background:radial-gradient(circle at 48% 43%,rgba(102,210,223,.33),transparent 28%),linear-gradient(160deg,#143b98,#0c245f); color:white; }
+.telehealth-orbit { position:absolute; inset:9%; border:1px solid rgba(255,255,255,.16); border-radius:50%; }
+.telehealth-orbit::before,.telehealth-orbit::after { content:""; position:absolute; border:1px solid rgba(255,255,255,.1); border-radius:50%; }
+.telehealth-orbit::before { inset:12%; }
+.telehealth-orbit::after { inset:28%; }
+.th-core,.th-node { position:absolute; z-index:3; border:1px solid rgba(255,255,255,.18); box-shadow:0 18px 45px rgba(3,14,49,.28); backdrop-filter:blur(12px); }
+.th-core { width:142px; height:142px; left:50%; top:50%; transform:translate(-50%,-50%); display:grid; place-items:center; align-content:center; border-radius:50%; background:#fff; color:var(--th-blue-dark); }
+.th-core strong { font-size:50px; line-height:.8; letter-spacing:-.06em; }
+.th-core span { margin-top:8px; font-size:8px; font-weight:760; letter-spacing:.08em; text-transform:uppercase; }
+.th-node { min-width:140px; padding:15px 17px; border-radius:16px; background:rgba(8,30,87,.7); }
+.th-node span,.th-node strong { display:block; }
+.th-node span { color:#a9c8ff; font-size:7px; letter-spacing:.09em; text-transform:uppercase; }
+.th-node strong { margin-top:4px; font-size:13px; }
+.node-search { left:2%; top:14%; }
+.node-grant { right:1%; top:20%; }
+.node-linkedin { left:4%; bottom:13%; }
+.node-return { right:1%; bottom:16%; background:var(--th-cyan); color:#09284a; border-color:var(--th-cyan); }
+.node-return span { color:rgba(9,40,74,.58); }
+.telehealth-client-panel { position:absolute; z-index:5; right:5%; bottom:4%; max-width:230px; padding:13px 15px; display:flex; align-items:center; gap:11px; border-radius:18px; background:#fff; color:#102d73; box-shadow:0 24px 55px rgba(3,14,49,.32); }
+.client-avatar-cover { width:54px; height:54px; }
+.telehealth-client-panel span,.telehealth-client-panel strong,.telehealth-client-panel small { display:block; }
+.telehealth-client-panel span { color:#6d83af; font-size:7px; letter-spacing:.08em; text-transform:uppercase; }
+.telehealth-client-panel strong { margin-top:3px; font-size:11px; }
+.telehealth-client-panel small { margin-top:3px; color:#6b7893; font-size:8px; }
+.testimonial-brand-lockup { display:grid; justify-items:start; gap:15px; }
+.testimonial-logo { width:150px; height:58px; padding:7px 10px; }
+.telehealth-proof { grid-template-columns:180px minmax(0,1fr) 250px; }
+
+/* Shared branded client pages */
+.branded-client-page { background:var(--case-paper); color:var(--case-ink); }
+.branded-client-page .project-header { position:fixed; background:rgba(10,18,25,.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,.1); }
+.brand-case-shell { width:min(calc(100% - 48px),var(--case-max)); margin-inline:auto; }
+.brand-case-hero { min-height:100svh; padding:140px 0 70px; display:grid; align-items:center; overflow:hidden; position:relative; }
+.brand-hero-grid { display:grid; grid-template-columns:.92fr 1.08fr; gap:clamp(50px,7vw,100px); align-items:center; }
+.official-brand-lockup { width:max-content; max-width:260px; overflow:hidden; border-radius:18px; background:white; box-shadow:0 18px 55px rgba(10,18,25,.14); }
+.official-brand-lockup img { display:block; width:100%; height:100%; object-fit:contain; }
+.qordata-lockup { width:190px; height:102px; padding:6px 15px; }
+.telehealth-lockup { width:230px; height:88px; padding:10px 13px; }
+.brand-case-kicker,.brand-case-label { margin:26px 0 0; font-size:10px; font-weight:760; letter-spacing:.13em; text-transform:uppercase; }
+.brand-hero-copy h1 { margin:18px 0 0; max-width:760px; font-size:clamp(64px,7.6vw,112px); line-height:.86; letter-spacing:-.075em; }
+.brand-case-lede { max-width:700px; margin:34px 0 0; font-size:19px; line-height:1.55; }
+.hero-proof-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:32px; }
+.hero-proof-chips span { padding:9px 11px; border:1px solid currentColor; border-radius:999px; font-size:8px; font-weight:760; letter-spacing:.08em; text-transform:uppercase; opacity:.72; }
+.brand-hero-board { position:relative; min-height:620px; padding:30px; overflow:hidden; border-radius:34px; box-shadow:0 40px 100px rgba(10,18,25,.18); }
+.qordata-hero { background:radial-gradient(circle at 88% 30%,rgba(100,35,111,.12),transparent 24%),linear-gradient(135deg,#f9f3fa,#fff 55%); }
+.qordata-hero .brand-case-kicker { color:var(--qd-purple); }
+.qordata-hero .brand-case-lede { color:#5f5363; }
+.qordata-board { background:linear-gradient(160deg,#5e206c,#27142e); color:white; }
+.board-header { display:flex; justify-content:space-between; align-items:center; gap:20px; padding-bottom:18px; border-bottom:1px solid rgba(255,255,255,.15); font-size:9px; letter-spacing:.09em; text-transform:uppercase; }
+.board-header b { color:var(--qd-mint); }
+.board-result { position:relative; z-index:2; margin-top:55px; display:flex; flex-direction:column; }
+.board-result span,.board-result small { font-size:9px; letter-spacing:.09em; text-transform:uppercase; }
+.board-result strong { margin-top:8px; color:var(--qd-mint); font-size:clamp(90px,10vw,150px); line-height:.72; letter-spacing:-.09em; }
+.board-result small { margin-top:14px; color:#c2aec8; }
+.board-pipeline { position:relative; z-index:2; margin-top:50px; display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.board-pipeline article { min-height:120px; padding:16px; display:flex; flex-direction:column; border:1px solid rgba(255,255,255,.13); border-radius:18px; background:rgba(20,10,25,.42); }
+.board-pipeline i { width:27px; height:27px; display:grid; place-items:center; border-radius:50%; background:rgba(255,255,255,.08); color:#bca8c1; font-size:7px; font-style:normal; }
+.board-pipeline span { margin-top:auto; color:#9b879f; font-size:7px; letter-spacing:.08em; text-transform:uppercase; }
+.board-pipeline strong { margin-top:4px; font-size:12px; }
+.board-pipeline em { margin-top:8px; color:#ad99b3; font-size:8px; font-style:normal; }
+.board-pipeline article.success { border-color:rgba(181,244,216,.45); background:rgba(181,244,216,.08); }
+.board-pipeline article.success strong,.board-pipeline article.success em { color:var(--qd-mint); }
+.board-orbit { position:absolute; border:1px solid rgba(255,255,255,.06); border-radius:50%; }
+.board-orbit.orbit-one { width:480px; height:480px; right:-170px; top:-120px; }
+.board-orbit.orbit-two { width:300px; height:300px; right:-80px; top:-30px; }
+.telehealth-hero { background:radial-gradient(circle at 86% 32%,rgba(36,85,214,.13),transparent 25%),linear-gradient(135deg,#eef6ff,#fff 55%); }
+.telehealth-hero .brand-case-kicker { color:var(--th-blue); }
+.telehealth-hero .brand-case-lede { color:#55637c; }
+.telehealth-board { background:linear-gradient(160deg,#2455d6,#102d73); color:white; }
+.telehealth-client-identity { position:relative; z-index:4; display:flex; align-items:center; gap:15px; }
+.client-avatar-hero { width:78px; height:78px; border:4px solid rgba(255,255,255,.2); }
+.telehealth-client-identity span,.telehealth-client-identity strong,.telehealth-client-identity small { display:block; }
+.telehealth-client-identity span { color:#9fc2ff; font-size:8px; letter-spacing:.09em; text-transform:uppercase; }
+.telehealth-client-identity strong { margin-top:4px; font-size:15px; }
+.telehealth-client-identity small { margin-top:4px; color:#b5c7e8; font-size:9px; }
+.telehealth-hero-stats { position:relative; z-index:3; display:grid; grid-template-columns:1.2fr .8fr; gap:12px; margin-top:34px; }
+.telehealth-hero-stats article { padding:24px; border:1px solid rgba(255,255,255,.15); border-radius:22px; background:rgba(6,27,86,.38); }
+.telehealth-hero-stats span { color:#a9c9ff; font-size:8px; letter-spacing:.09em; text-transform:uppercase; }
+.telehealth-hero-stats strong { display:block; margin-top:8px; font-size:clamp(56px,6vw,88px); line-height:.8; letter-spacing:-.075em; }
+.telehealth-channel-map { position:relative; z-index:3; min-height:275px; margin-top:24px; border:1px solid rgba(255,255,255,.12); border-radius:26px; background:radial-gradient(circle at 50% 50%,rgba(102,210,223,.19),transparent 35%),rgba(5,22,69,.3); }
+.channel-core,.channel-node { position:absolute; }
+.channel-core { left:50%; top:50%; width:110px; height:110px; transform:translate(-50%,-50%); display:grid; place-items:center; align-content:center; border-radius:50%; background:white; color:var(--th-blue-dark); box-shadow:0 18px 45px rgba(4,16,52,.35); }
+.channel-core strong { font-size:40px; line-height:.8; }
+.channel-core span { margin-top:6px; font-size:7px; letter-spacing:.08em; text-transform:uppercase; }
+.channel-node { min-width:115px; padding:12px 14px; border-radius:15px; border:1px solid rgba(255,255,255,.14); background:rgba(15,48,125,.82); }
+.channel-node span,.channel-node strong { display:block; }
+.channel-node span { color:#9fc2ff; font-size:7px; letter-spacing:.08em; text-transform:uppercase; }
+.channel-node strong { margin-top:4px; font-size:11px; }
+.channel-node.paid { left:4%; top:13%; }
+.channel-node.grant { right:4%; top:13%; }
+.channel-node.linkedin { left:6%; bottom:12%; }
+.channel-node.return { right:4%; bottom:12%; background:var(--th-cyan); color:#09284a; border-color:var(--th-cyan); }
+.channel-node.return span { color:rgba(9,40,74,.55); }
+
+.brand-context-section,.brand-work-section { padding:115px 0; }
+.brand-context-section { background:var(--case-paper); }
+.brand-work-section { background:#fff; }
+.section-intro-grid { display:grid; grid-template-columns:180px 1fr; gap:60px; align-items:start; }
+.section-intro-grid .brand-case-label { margin:8px 0 0; color:#7b747b; }
+.section-intro-grid h2 { margin:0; max-width:960px; font-size:clamp(48px,6vw,90px); line-height:.93; letter-spacing:-.065em; }
+.section-intro-grid > div > p { max-width:820px; margin:28px 0 0; color:var(--case-muted); font-size:17px; }
+.context-card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:60px; }
+.context-card-grid article { min-height:270px; padding:28px; display:flex; flex-direction:column; border:1px solid var(--case-line); border-radius:22px; background:#fff; box-shadow:0 16px 45px rgba(10,18,25,.045); }
+.context-card-grid span { font-size:9px; font-weight:760; letter-spacing:.1em; text-transform:uppercase; }
+.qordata-page .context-card-grid span { color:var(--qd-purple); }
+.telehealth-page .context-card-grid span { color:var(--th-blue); }
+.context-card-grid strong { margin-top:auto; font-size:26px; line-height:1.03; letter-spacing:-.04em; }
+.context-card-grid p { margin:12px 0 0; color:var(--case-muted); font-size:14px; }
+
+.brand-system-section { padding:115px 0 125px; color:#fff; }
+.qordata-system-section { background:linear-gradient(150deg,#24132b,#4d1e58); }
+.telehealth-system-section { background:linear-gradient(150deg,#0d2869,#2455d6); }
+.inverse-intro .brand-case-label { color:#c8b3cd; }
+.telehealth-system-section .inverse-intro .brand-case-label { color:#9fc2ff; }
+.inverse-intro h2 { color:#fff; }
+.inverse-intro > div > p { color:rgba(255,255,255,.65); }
+.system-stage-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:60px; }
+.system-stage-grid article { position:relative; min-height:310px; padding:24px; display:flex; flex-direction:column; overflow:hidden; border:1px solid rgba(255,255,255,.14); border-radius:22px; background:rgba(255,255,255,.055); }
+.stage-number { font-size:9px; font-weight:760; color:rgba(255,255,255,.45); }
+.stage-icon { width:62px; height:62px; margin-top:34px; position:relative; border:1px solid rgba(255,255,255,.18); border-radius:18px; background:rgba(255,255,255,.06); }
+.target-icon::before { content:""; position:absolute; inset:14px; border:2px solid var(--qd-mint); border-radius:50%; box-shadow:0 0 0 7px rgba(181,244,216,.12); }
+.target-icon::after { content:""; position:absolute; width:8px; height:8px; left:27px; top:27px; border-radius:50%; background:var(--qd-mint); }
+.search-icon::before { content:""; position:absolute; width:23px; height:23px; left:15px; top:13px; border:2px solid var(--qd-mint); border-radius:50%; }
+.search-icon::after { content:""; position:absolute; width:19px; height:2px; left:35px; top:38px; background:var(--qd-mint); transform:rotate(45deg); transform-origin:left center; }
+.magnet-icon::before,.magnet-icon::after { content:""; position:absolute; width:15px; height:29px; top:14px; border:4px solid var(--qd-mint); border-top:0; }
+.magnet-icon::before { left:14px; border-radius:0 0 0 14px; }
+.magnet-icon::after { right:14px; border-radius:0 0 14px 0; }
+.loop-icon::before { content:"↻"; position:absolute; inset:0; display:grid; place-items:center; color:var(--qd-mint); font-size:35px; }
+.system-stage-grid article > span { margin-top:auto; color:rgba(255,255,255,.5); font-size:8px; letter-spacing:.09em; text-transform:uppercase; }
+.system-stage-grid article > strong { margin-top:6px; font-size:22px; line-height:1.03; }
+.system-stage-grid article > p { margin:10px 0 0; color:rgba(255,255,255,.62); font-size:13px; }
+.system-connector { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:32px; overflow-x:auto; white-space:nowrap; }
+.system-connector span,.system-connector strong { padding:9px 11px; border-radius:999px; background:rgba(255,255,255,.08); font-size:8px; letter-spacing:.08em; text-transform:uppercase; }
+.system-connector strong { background:var(--qd-mint); color:#163126; }
+.system-connector i { min-width:28px; height:1px; background:rgba(255,255,255,.22); }
+
+.telehealth-media-stage { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:60px; }
+.media-card { min-height:360px; padding:28px; display:flex; flex-direction:column; overflow:hidden; border:1px solid rgba(255,255,255,.15); border-radius:24px; background:rgba(255,255,255,.06); }
+.media-card > span { color:#9fc2ff; font-size:9px; font-weight:760; letter-spacing:.1em; text-transform:uppercase; }
+.media-card > strong { max-width:520px; margin-top:14px; font-size:32px; line-height:.98; letter-spacing:-.045em; }
+.search-query { margin-top:auto; padding:16px; display:grid; grid-template-columns:24px 1fr auto; gap:12px; align-items:center; border-radius:16px; background:#fff; color:#0d2869; }
+.search-query i { width:16px; height:16px; border:2px solid var(--th-blue); border-radius:50%; position:relative; }
+.search-query i::after { content:""; position:absolute; width:8px; height:2px; right:-6px; bottom:-3px; background:var(--th-blue); transform:rotate(45deg); }
+.search-query p { margin:0; font-size:12px; }
+.search-query b { padding:7px 9px; border-radius:999px; background:var(--th-blue); color:#fff; font-size:8px; }
+.grant-badge { margin-top:auto; padding:20px; display:flex; align-items:center; gap:16px; border-radius:18px; background:#dff5f7; color:#0a3550; }
+.grant-badge b { width:48px; height:48px; display:grid; place-items:center; border-radius:50%; background:#fff; color:var(--th-blue); font-size:24px; }
+.grant-badge p { margin:0; font-size:13px; }
+.linkedin-target { margin-top:auto; padding:18px; display:grid; grid-template-columns:repeat(3,44px) 1fr; gap:8px; align-items:center; border-radius:18px; background:#fff; color:#102d73; }
+.linkedin-target i { width:44px; height:44px; border-radius:50%; background:linear-gradient(150deg,#cbdcff,#6e99ff); border:3px solid #fff; box-shadow:0 4px 13px rgba(16,45,115,.18); }
+.linkedin-target i:nth-child(2) { margin-left:-16px; background:linear-gradient(150deg,#dcf6f8,#65d5de); }
+.linkedin-target i:nth-child(3) { margin-left:-16px; background:linear-gradient(150deg,#e9e1ff,#a98fff); }
+.linkedin-target p { margin:0; font-size:12px; font-weight:700; }
+.landing-browser { margin-top:auto; overflow:hidden; border-radius:18px; background:#fff; color:#102d73; box-shadow:0 18px 45px rgba(4,16,52,.22); }
+.landing-browser > div { height:24px; background:#eaf4ff; border-bottom:1px solid #d6e5fb; }
+.landing-browser h4 { margin:24px 22px 7px; font-size:24px; letter-spacing:-.04em; }
+.landing-browser p { margin:0 22px; color:#697998; font-size:12px; }
+.landing-browser button { margin:20px 22px 24px; padding:9px 12px; border:0; border-radius:999px; background:var(--th-blue); color:#fff; font-size:9px; font-weight:760; }
+.telehealth-return-strip { display:flex; align-items:center; justify-content:center; gap:12px; margin-top:32px; overflow-x:auto; white-space:nowrap; }
+.telehealth-return-strip span,.telehealth-return-strip strong { padding:10px 13px; border-radius:999px; background:rgba(255,255,255,.09); font-size:8px; letter-spacing:.08em; text-transform:uppercase; }
+.telehealth-return-strip strong { background:var(--th-cyan); color:#09284a; }
+.telehealth-return-strip i { width:38px; height:1px; background:rgba(255,255,255,.2); }
+
+.work-mosaic { display:grid; grid-template-columns:1.2fr .8fr; grid-template-rows:auto auto; gap:14px; margin-top:60px; }
+.work-mosaic article { min-height:270px; padding:28px; overflow:hidden; border-radius:24px; }
+.work-mosaic span { font-size:9px; font-weight:760; letter-spacing:.09em; text-transform:uppercase; }
+.work-mosaic h3 { margin:15px 0 0; max-width:620px; font-size:clamp(32px,4vw,52px); line-height:.95; letter-spacing:-.055em; }
+.work-mosaic p { max-width:620px; margin:18px 0 0; font-size:14px; line-height:1.55; }
+.mosaic-large { grid-row:1 / 3; background:#f4eaf6; color:#3c1645; }
+.mosaic-small { background:#24132b; color:#fff; }
+.mosaic-small.accent { background:var(--qd-mint); color:#163126; }
+.mosaic-wide { grid-column:2; background:var(--qd-purple); color:#fff; }
+.mini-target-map { position:relative; width:220px; height:120px; margin-top:45px; }
+.mini-target-map i { position:absolute; width:58px; height:58px; border:1px solid rgba(100,35,111,.25); border-radius:50%; }
+.mini-target-map i:nth-child(1){left:0;top:30px}.mini-target-map i:nth-child(2){left:65px;top:5px}.mini-target-map i:nth-child(3){left:128px;top:40px}.mini-target-map b { position:absolute; width:18px; height:18px; left:84px; top:42px; border-radius:50%; background:var(--qd-purple); box-shadow:0 0 0 10px rgba(100,35,111,.12); }
+.mosaic-stat { display:flex; align-items:flex-end; gap:14px; }
+.mosaic-stat strong { font-size:80px; line-height:.75; letter-spacing:-.08em; }
+.mosaic-stat p { margin:0 0 5px; color:rgba(255,255,255,.72); }
+.telehealth-mosaic .mosaic-large { background:#eaf4ff; color:#102d73; }
+.telehealth-mosaic .mosaic-small.blue { background:#2455d6; }
+.telehealth-mosaic .mosaic-small.aqua { background:#dff5f7; color:#0a3550; }
+.testimonial-teaser { grid-column:2; background:#102d73; color:#fff; display:grid; grid-template-columns:72px 1fr; gap:18px; align-items:center; }
+.testimonial-teaser .client-avatar { width:72px; height:72px; }
+.testimonial-teaser blockquote { grid-column:1 / -1; margin:10px 0 0; font-size:29px; line-height:1.08; letter-spacing:-.04em; }
+.testimonial-teaser > div:last-child { grid-column:2; }
+.testimonial-teaser strong,.testimonial-teaser span { display:block; }
+.testimonial-teaser span { color:#9fc2ff; font-size:8px; }
+.budget-dial { position:relative; width:190px; height:190px; margin-top:45px; display:grid; place-items:center; align-content:center; border-radius:50%; border:1px solid rgba(36,85,214,.22); box-shadow:inset 0 0 0 28px rgba(36,85,214,.05); }
+.budget-dial strong { font-size:42px; letter-spacing:-.06em; }
+.budget-dial span { margin-top:5px; color:#6b7b9a; font-size:8px; }
+.budget-dial i { position:absolute; width:12px; height:12px; top:7px; left:50%; margin-left:-6px; border-radius:50%; background:var(--th-blue); }
+
+.telehealth-testimonial-section { padding:110px 0; background:#dff5f7; }
+.testimonial-feature-grid { display:grid; grid-template-columns:280px 1fr; gap:70px; align-items:center; }
+.testimonial-brand-column { display:grid; gap:24px; justify-items:start; }
+.testimonial-portrait { width:180px; height:180px; border:8px solid #fff; box-shadow:0 20px 55px rgba(10,53,80,.14); }
+.testimonial-feature-grid blockquote { max-width:900px; margin:0; font-size:clamp(42px,5vw,76px); line-height:.98; letter-spacing:-.055em; font-weight:650; }
+.testimonial-meta { margin-top:30px; }
+.testimonial-meta strong,.testimonial-meta span,.testimonial-meta small { display:block; }
+.testimonial-meta strong { font-size:16px; }
+.testimonial-meta span { margin-top:4px; color:#2455d6; font-size:11px; }
+.testimonial-meta small { margin-top:5px; color:#62808c; font-size:10px; }
+
+.brand-result-section { padding:115px 0; }
+.qordata-result { background:var(--qd-lilac); }
+.telehealth-result { background:var(--th-pale); }
+.result-grid { display:grid; grid-template-columns:220px 1fr auto; gap:55px; align-items:end; }
+.result-logo { width:200px; height:130px; display:grid; place-items:center; overflow:hidden; border-radius:22px; background:#fff; box-shadow:0 20px 55px rgba(10,18,25,.09); }
+.result-logo img { width:100%; height:100%; object-fit:contain; }
+.telehealth-result-logo { height:105px; padding:10px; }
+.result-grid .brand-case-label { margin:0 0 18px; }
+.qordata-result .brand-case-label { color:var(--qd-purple); }
+.telehealth-result .brand-case-label { color:var(--th-blue); }
+.result-grid h2 { margin:0; font-size:clamp(66px,8vw,116px); line-height:.8; letter-spacing:-.08em; }
+.result-grid p { max-width:720px; margin:28px 0 0; color:var(--case-muted); font-size:17px; }
+.result-substat { margin-top:26px; display:flex; align-items:flex-end; gap:12px; }
+.result-substat strong { color:var(--th-blue); font-size:44px; line-height:.8; letter-spacing:-.06em; }
+.result-substat span { color:#657596; font-size:10px; text-transform:uppercase; letter-spacing:.08em; }
+.result-cta { display:flex; flex-direction:column; align-items:flex-end; gap:16px; }
+.result-cta > a:first-child { padding:14px 19px; border-radius:999px; background:var(--case-ink); color:#fff; font-size:10px; font-weight:760; letter-spacing:.08em; text-transform:uppercase; }
+.next-project-link { font-size:10px; font-weight:700; text-decoration:underline; text-underline-offset:4px; }
+
+@media (max-width:1050px) {
+  .client-case-cover,.brand-hero-grid { grid-template-columns:1fr; }
+  .qordata-cover,.telehealth-cover { background:#fff; }
+  .qordata-cover-system,.telehealth-cover-system { min-height:540px; }
+  .brand-hero-board { min-height:560px; }
+  .board-pipeline,.system-stage-grid { grid-template-columns:1fr 1fr; }
+  .section-intro-grid { grid-template-columns:1fr; gap:24px; }
+  .context-card-grid { grid-template-columns:1fr 1fr; }
+  .result-grid { grid-template-columns:180px 1fr; }
+  .result-cta { grid-column:2; align-items:flex-start; }
+}
+
+@media (max-width:760px) {
+  .brand-case-shell { width:min(calc(100% - 28px),var(--case-max)); }
+  .client-case-cover { min-height:auto; }
+  .brand-cover-copy { padding:34px 20px 42px; }
+  .brand-cover-copy h3 { font-size:42px; }
+  .brand-cover-stat strong { font-size:78px; }
+  .qordata-cover-system,.telehealth-cover-system { min-height:480px; }
+  .qd-screen { width:90%; }
+  .qd-audience-row { grid-template-columns:30px 1fr; }
+  .qd-audience-row em { grid-column:2; }
+  .telehealth-orbit { inset:8% 4%; }
+  .th-node { min-width:105px; padding:11px; }
+  .telehealth-client-panel { left:5%; right:auto; bottom:4%; }
+  .brand-case-hero { min-height:auto; padding:120px 0 70px; }
+  .brand-hero-copy h1 { font-size:56px; }
+  .brand-hero-board { min-height:520px; padding:20px; }
+  .board-pipeline { grid-template-columns:1fr 1fr; }
+  .board-pipeline article { min-height:105px; }
+  .telehealth-hero-stats { grid-template-columns:1fr; }
+  .channel-node { min-width:98px; padding:10px; }
+  .brand-context-section,.brand-work-section,.brand-system-section,.telehealth-testimonial-section,.brand-result-section { padding:82px 0; }
+  .section-intro-grid h2 { font-size:44px; }
+  .context-card-grid,.system-stage-grid,.telehealth-media-stage,.work-mosaic { grid-template-columns:1fr; }
+  .system-stage-grid article { min-height:260px; }
+  .mosaic-large,.mosaic-wide,.testimonial-teaser { grid-column:auto; grid-row:auto; }
+  .telehealth-return-strip,.system-connector { justify-content:flex-start; }
+  .testimonial-feature-grid { grid-template-columns:1fr; gap:35px; }
+  .testimonial-portrait { width:140px; height:140px; }
+  .result-grid { grid-template-columns:1fr; gap:32px; }
+  .result-cta { grid-column:auto; align-items:flex-start; }
+  .telehealth-proof { grid-template-columns:1fr; }
+}
