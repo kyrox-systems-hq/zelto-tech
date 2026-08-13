@@ -95,12 +95,12 @@ const installNamedFreelanceCases = () => {
     proof.innerHTML = `
       <div class="testimonial-brand-lockup">
         <div class="brand-logo-plate testimonial-logo"><img src="${TELEHEALTH_LOGO}" alt="Telehealth.org" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div>
-        ${clientAvatar(client-avatar-proof)}
+        ${clientAvatar('client-avatar-proof')}
       </div>
       <blockquote>Refreshingly professional and on-point. We look forward to working with Suhayb in the future.</blockquote>
       <div class="quote-source">
         <strong>Marlene M. Maheu, PhD</strong>
-        <span>Founder » Telehealth.org</span>
+        <span>Founder · Telehealth.org</span>
         <small>Client feedback after the Telehealth.org growth marketing engagement</small>
       </div>`;
   }
