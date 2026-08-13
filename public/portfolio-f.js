@@ -1,1 +1,1 @@
-const tr=ZP.w.querySelector('.portfolio-shelf-track'),step=()=>tr.firstElementChild?.getBoundingClientRect().width+18||tr.clientWidth;ZP.w.querySelector('[data-prev]').onclick=()=>tr.scrollLeft-=step();ZP.w.querySelector('[data-next]').onclick=()=>tr.scrollLeft+=step();
+const tr=ZP.w.querySelector('.portfolio-shelf-track'),p=ZP.w.querySelector('[data-prev]'),n=ZP.w.querySelector('[data-next]'),step=()=>tr.firstElementChild?.getBoundingClientRect().width+18||tr.clientWidth;p.onclick=()=>tr.scrollLeft-=step();n.onclick=()=>tr.scrollLeft+=step();
