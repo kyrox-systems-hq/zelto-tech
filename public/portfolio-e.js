@@ -1,1 +1,1 @@
-const h=ZP.w.querySelector('.portfolio-more-head'),c=document.createElement('div');c.className='portfolio-shelf-controls';c.innerHTML='<button type="button" data-prev aria-label="Previous projects">&lt;</button><button type="button" data-next aria-label="More projects">&gt;</button>';h.append(c);
+ZP.shelfReady=true;
