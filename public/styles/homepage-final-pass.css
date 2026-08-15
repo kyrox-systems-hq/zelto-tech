@@ -27,6 +27,7 @@
 .orbit-one { width: 210px; height: 210px; }
 .orbit-two { width: 310px; height: 310px; }
 .hero-bottom { margin-top: 22px; }
+.statement h2 span { color: rgba(10,18,25,.78); }
 
 /* Client credibility is presented as one quiet, premium proof band. */
 .brand-proof.brand-proof-v2 {
@@ -35,31 +36,29 @@
   padding: 0;
 }
 
-.brand-proof-v2 .brand-proof-shell { padding: 48px 0 44px; }
+.brand-proof-v2 .brand-proof-shell { padding: 28px 0 26px; }
 .brand-proof-v2 .brand-proof-copy {
-  align-items: center;
-  padding: 0 0 28px;
+  display: block;
+  padding: 0 0 12px;
   border: 0;
 }
 .brand-proof-v2 .brand-proof-copy p { color: var(--black); }
 .brand-proof-v2 .brand-proof-copy h2 {
-  max-width: 680px;
-  font-size: clamp(28px, 3vw, 42px);
-  line-height: 1;
+  display: none;
 }
 .brand-logo-cloud {
-  min-height: 112px;
+  min-height: 84px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  gap: 0;
 }
 .brand-cloud-logo {
-  min-height: 96px;
-  padding: 22px 26px;
+  min-height: 78px;
+  padding: 16px 26px;
   border: 0;
-  border-radius: 18px;
-  background: rgba(10,18,25,.035);
+  border-radius: 0;
+  background: transparent;
 }
-.brand-cloud-logo:hover { background: rgba(255,111,104,.1); }
+.brand-cloud-logo:hover { background: transparent; opacity: .62; }
 .brand-cloud-logo.is-logo-ready img,
 .brand-cloud-logo .logo-cloud-fallback,
 .xiq-wordmark { opacity: .82; }
@@ -100,32 +99,31 @@
 .ai-system .section-heading { margin-bottom: 58px; }
 .ai-system .section-heading h2 { max-width: 900px; }
 .workflow {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  border: 0;
+  position: relative;
+  display: block;
+  border-top: 1px solid var(--line);
 }
-.workflow-rail { display: none; }
+.workflow-rail { display: block; }
 .workflow-step {
-  min-height: 390px;
+  min-height: 245px;
   display: grid;
-  grid-template-columns: 58px 1fr;
-  grid-template-rows: auto 1fr;
-  gap: 22px;
-  align-items: start;
-  padding: 28px;
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 24px;
-  background: #0d171f;
+  grid-template-columns: 100px 1fr 330px;
+  gap: 40px;
+  align-items: center;
+  padding: 38px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
 }
-.step-index { width: 52px; height: 52px; }
-.step-copy { padding-top: 2px; }
+.step-index { width: 70px; height: 70px; }
+.step-copy { padding-top: 0; }
 .step-copy h3 { max-width: 430px; font-size: clamp(24px, 2.3vw, 34px); }
 .step-copy p { max-width: 490px; }
 .step-demo {
-  grid-column: 1 / -1;
-  height: 150px;
-  align-self: end;
+  grid-column: auto;
+  height: 160px;
+  align-self: center;
 }
 .personalise-demo > span,
 .review-demo > div:first-child { color: #aaa5ab; }
@@ -257,6 +255,7 @@
   .hero-system { max-width: 720px; justify-self: end; }
   .system-canvas { min-height: 500px; }
   .service-card { min-height: 470px; }
+  .workflow-step { grid-template-columns: 90px 1fr 270px; gap: 24px; }
   .recommendation-heading { grid-template-columns: 110px 1fr; }
   .recommendation-heading > span { grid-column: 2; }
   .recommendation-card { grid-template-columns: 230px 1fr; }
@@ -278,23 +277,23 @@
   .human-card { right: -20%; }
   .message-card { left: 10%; top: 39%; }
   .hero-bottom { display: none; }
-  .brand-proof-v2 .brand-proof-shell { padding: 34px 0; }
+  .brand-proof-v2 .brand-proof-shell { padding: 24px 0 22px; }
   .brand-proof-v2 .brand-proof-copy { display: block; padding-bottom: 20px; }
   .brand-proof-v2 .brand-proof-copy h2 { margin-top: 9px; text-align: left; }
   .brand-logo-cloud { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .brand-cloud-logo { min-height: 82px; padding: 18px 12px; border: 0 !important; }
+  .brand-cloud-logo { min-height: 72px; padding: 14px 12px; border: 0 !important; }
   .services,
   .ai-system,
   .work,
   .contact { padding-top: 88px; }
   .services,
   .ai-system { padding-bottom: 94px; }
-  .service-grid,
-  .workflow { grid-template-columns: 1fr; }
+  .service-grid { grid-template-columns: 1fr; }
   .service-card { min-height: auto; padding: 20px; }
   .service-visual { min-height: 220px; }
-  .workflow-step { min-height: 350px; padding: 22px; grid-template-columns: 48px 1fr; }
-  .step-index { width: 44px; height: 44px; }
+  .workflow-step { min-height: auto; padding: 34px 0; grid-template-columns: 58px 1fr; gap: 18px; }
+  .step-index { width: 50px; height: 50px; }
+  .step-demo { grid-column: 2 / -1; height: 140px; margin-top: 10px; }
   .judgement-panel { grid-template-columns: 1fr; gap: 38px; padding: 28px 22px; }
   .judgement-principles article { grid-template-columns: 30px 1fr; }
   .judgement-principles p { grid-column: 2; }
