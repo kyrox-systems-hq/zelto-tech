@@ -77,10 +77,7 @@
 
     const more = showcase.querySelector('.portfolio-more');
     if (proof && more) more.after(proof);
-    if (sourceGrid) {
-      sourceGrid.hidden = true;
-      sourceGrid.setAttribute('aria-hidden', 'true');
-    }
+    sourceGrid?.remove();
 
     const step = () => (track.firstElementChild?.getBoundingClientRect().width || track.clientWidth) + 18;
     showcase.querySelector('.is-prev').onclick = () => { track.scrollLeft -= step(); };
