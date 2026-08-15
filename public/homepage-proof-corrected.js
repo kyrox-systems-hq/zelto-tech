@@ -1,4 +1,4 @@
-const MEDSATTIRE_LOGO='https://www.medsattire.com/cdn/shop/files/Asset_2.svg?v=1757178851&width=600';
+const MEDSATTIRE_LOGO='assets/clients/medsattire-logo.svg';
 const TELEHEALTH_LOGO_PROOF='https://mma.prnewswire.com/media/2678957/Telehealth_org_logo.jpg?p=facebook';
 const TELEHEALTH_PHOTO_PROOF='https://telehealth.org/wp-content/uploads/2025/05/Marlene-M.-Maheu.jpg';
 const QORDATA_LOGO_PROOF='https://cdn.theorg.com/ec654518-cf1b-4c04-9d14-591eb4ea0506_medium.jpg';

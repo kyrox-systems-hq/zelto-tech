@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" role="img" aria-labelledby="title">
+  <title id="title">MedsAttire</title>
+  <g fill="#081518">
+    <path d="M24 18h54v20h20v44H78v20H24V82H4V38h20V18Zm18 20v18H24v8h18v18h18V64h18v-8H60V38H42Z"/>
+    <text x="122" y="82" font-family="Arial, Helvetica, sans-serif" font-size="67" font-weight="700" letter-spacing="-3">MedsAttire</text>
+  </g>
+</svg>

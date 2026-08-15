@@ -1,5 +1,33 @@
 (() => {
   const findCard = (root, fragment) => root.querySelector(`a[href*="${fragment}"]`)?.closest('.work-card');
+  const createShelfClone = (card, type) => {
+    const clone = card.cloneNode(true);
+    clone.classList.add('portfolio-shelf-item');
+    clone.classList.remove('reveal');
+    clone.dataset.featuredShelfCopy = type;
+
+    if (type === 'medsattire') {
+      const href = 'work/medsattire-meta-ads/';
+      if (!clone.querySelector('.medsattire-card-overlay')) {
+        clone.insertAdjacentHTML('afterbegin', `<a class="medsattire-card-overlay" href="${href}" aria-label="View the MedsAttire Meta Ads case study"></a>`);
+      }
+      const symbol = clone.querySelector('.medsattire-symbol');
+      if (symbol) {
+        symbol.classList.add('medsattire-brand-mark', 'is-logo-ready');
+        symbol.innerHTML = '<img src="assets/clients/medsattire-logo.svg" alt="MedsAttire" loading="lazy" decoding="async">';
+      }
+      const secondaryLink = clone.querySelector('.medsattire-site-link');
+      if (secondaryLink) {
+        secondaryLink.href = href;
+        secondaryLink.removeAttribute('target');
+        secondaryLink.removeAttribute('rel');
+        secondaryLink.tabIndex = -1;
+        secondaryLink.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    return clone;
+  };
 
   const enforceOrder = () => {
     const section = document.querySelector('#work');
@@ -18,8 +46,8 @@
 
     let showcase = section.querySelector('.portfolio-showcase');
     if (showcase?.dataset.orderLocked === 'true') {
-      const featured = showcase.querySelector('.portfolio-featured-grid');
-      if (proof && featured && proof.previousElementSibling !== featured) featured.after(proof);
+      const more = showcase.querySelector('.portfolio-more');
+      if (proof && more && proof.previousElementSibling !== more) more.after(proof);
       return true;
     }
     const sourceGrid = section.querySelector('.work-grid');
@@ -44,12 +72,15 @@
     const featured = showcase.querySelector('.portfolio-featured-grid');
     const track = showcase.querySelector('.portfolio-shelf-track');
     featured.append(meds, telehealth);
-    [qordata, xiq, fizzy, refined, devvolve, people].filter(Boolean).forEach(card => {
+    const medsShelfCard = createShelfClone(meds, 'medsattire');
+    const telehealthShelfCard = createShelfClone(telehealth, 'telehealth');
+    [medsShelfCard, telehealthShelfCard, qordata, xiq, fizzy, refined, devvolve, people].filter(Boolean).forEach(card => {
       card.classList.add('portfolio-shelf-item');
       track.append(card);
     });
 
-    if (proof) featured.after(proof);
+    const more = showcase.querySelector('.portfolio-more');
+    if (proof && more) more.after(proof);
     if (sourceGrid) {
       sourceGrid.hidden = true;
       sourceGrid.setAttribute('aria-hidden', 'true');
