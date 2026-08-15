@@ -58,10 +58,8 @@
     }
 
     showcase.innerHTML = `
-      <div class="portfolio-featured-head"><span>Featured client work</span></div>
-      <div class="portfolio-featured-grid portfolio-feature-secondary"></div>
-      <div class="portfolio-more">
-        <div class="portfolio-more-head"><div><span>More selected work</span><h3>Explore more case studies.</h3></div><p>Swipe, scroll, or use the arrows.</p></div>
+      <div class="portfolio-more portfolio-more-only">
+        <div class="portfolio-more-head"><div><span>Selected work</span><h3>Explore more case studies.</h3></div><p>Swipe, scroll, or use the arrows.</p></div>
         <div class="portfolio-slider-shell">
           <button class="portfolio-slider-arrow is-prev" type="button" aria-label="Previous case studies"><span aria-hidden="true">←</span></button>
           <div class="portfolio-shelf-track" role="region" tabindex="0" aria-label="More selected work"></div>
@@ -69,9 +67,7 @@
         </div>
       </div>`;
 
-    const featured = showcase.querySelector('.portfolio-featured-grid');
     const track = showcase.querySelector('.portfolio-shelf-track');
-    featured.append(meds, telehealth);
     const medsShelfCard = createShelfClone(meds, 'medsattire');
     const telehealthShelfCard = createShelfClone(telehealth, 'telehealth');
     [medsShelfCard, telehealthShelfCard, qordata, xiq, fizzy, refined, devvolve, people].filter(Boolean).forEach(card => {
