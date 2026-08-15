@@ -13,9 +13,15 @@
     const refined = findCard(section, 'refined-vision-product-design');
     const devvolve = findCard(section, 'devvolve-brand-identity');
     const people = findCard(section, 'people-water-product-design');
+    const proof = section.querySelector('.proof-strip');
     if (!meds || !telehealth || !fizzy) return false;
 
     let showcase = section.querySelector('.portfolio-showcase');
+    if (showcase?.dataset.orderLocked === 'true') {
+      const featured = showcase.querySelector('.portfolio-featured-grid');
+      if (proof && featured && proof.previousElementSibling !== featured) featured.after(proof);
+      return true;
+    }
     const sourceGrid = section.querySelector('.work-grid');
     if (!showcase) {
       showcase = document.createElement('div');
@@ -25,12 +31,12 @@
 
     showcase.innerHTML = `
       <div class="portfolio-featured-head"><span>Featured client work</span></div>
-      <div class="portfolio-featured-grid"></div>
+      <div class="portfolio-featured-grid portfolio-feature-secondary"></div>
       <div class="portfolio-more">
-        <div class="portfolio-more-head"><div><span>More selected work</span><h3>Explore the rest.</h3></div><p>Swipe, scroll, or use the arrows.</p></div>
+        <div class="portfolio-more-head"><div><span>More selected work</span><h3>Explore more case studies.</h3></div><p>Swipe, scroll, or use the arrows.</p></div>
         <div class="portfolio-slider-shell">
           <button class="portfolio-slider-arrow is-prev" type="button" aria-label="Previous case studies"><span aria-hidden="true">←</span></button>
-          <div class="portfolio-shelf-track" tabindex="0" aria-label="More selected work"></div>
+          <div class="portfolio-shelf-track" role="region" tabindex="0" aria-label="More selected work"></div>
           <button class="portfolio-slider-arrow is-next" type="button" aria-label="More case studies"><span aria-hidden="true">→</span></button>
         </div>
       </div>`;
@@ -43,7 +49,6 @@
       track.append(card);
     });
 
-    const proof = section.querySelector('.proof-strip');
     if (proof) featured.after(proof);
     if (sourceGrid) {
       sourceGrid.hidden = true;
@@ -66,6 +71,8 @@
   };
 
   lock();
+  window.addEventListener('zelto:portfolio-ready', enforceOrder);
+  window.addEventListener('zelto:homepage-proof-ready', enforceOrder);
   window.setTimeout(enforceOrder, 750);
   window.setTimeout(enforceOrder, 1800);
 })();

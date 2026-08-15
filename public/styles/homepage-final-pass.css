@@ -1,0 +1,317 @@
+/* Connected homepage final pass. Core portfolio and case-study styling remains unchanged. */
+
+.hero {
+  min-height: auto;
+  padding: 128px 0 44px;
+}
+
+.hero-grid {
+  min-height: 690px;
+  grid-template-columns: 1.12fr .88fr;
+  gap: clamp(42px, 6vw, 86px);
+}
+
+.hero-copy { max-width: 750px; }
+.hero h1 { font-size: clamp(64px, 7vw, 108px); }
+.hero-lede { max-width: 700px; }
+.hero-proof { margin-top: 38px; }
+.hero-system { max-width: 540px; justify-self: end; width: 100%; }
+.system-canvas { min-height: 440px; }
+.system-window { border-radius: 24px; }
+.agent-card { transform: scale(.82); transform-origin: top left; }
+.prospect-card { left: 3%; top: 7%; }
+.research-card { right: -7%; top: 10%; }
+.message-card { left: 19%; top: 40%; }
+.human-card { right: -7%; bottom: 7%; }
+.performance-card { left: 3%; bottom: 5%; }
+.orbit-one { width: 210px; height: 210px; }
+.orbit-two { width: 310px; height: 310px; }
+.hero-bottom { margin-top: 22px; }
+
+/* Client credibility is presented as one quiet, premium proof band. */
+.brand-proof.brand-proof-v2 {
+  background: var(--white);
+  border: 0;
+  padding: 0;
+}
+
+.brand-proof-v2 .brand-proof-shell { padding: 48px 0 44px; }
+.brand-proof-v2 .brand-proof-copy {
+  align-items: center;
+  padding: 0 0 28px;
+  border: 0;
+}
+.brand-proof-v2 .brand-proof-copy p { color: var(--black); }
+.brand-proof-v2 .brand-proof-copy h2 {
+  max-width: 680px;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1;
+}
+.brand-logo-cloud {
+  min-height: 112px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.brand-cloud-logo {
+  min-height: 96px;
+  padding: 22px 26px;
+  border: 0;
+  border-radius: 18px;
+  background: rgba(10,18,25,.035);
+}
+.brand-cloud-logo:hover { background: rgba(255,111,104,.1); }
+.brand-cloud-logo.is-logo-ready img,
+.brand-cloud-logo .logo-cloud-fallback,
+.xiq-wordmark { opacity: .82; }
+.brand-proof-context { display: none !important; }
+
+/* Capabilities now read as one connected commercial system. */
+.services { padding: 124px 0 132px; }
+.services .section-heading { margin-bottom: 58px; }
+.services .section-heading > div { grid-template-columns: 1.18fr .82fr; }
+.services .section-heading p:last-child { color: #4f4b52; }
+.services .dark-number,
+.work .dark-number { color: #5f5a61; opacity: 1; }
+.service-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.service-card,
+.service-feature {
+  min-height: 500px;
+  grid-column: auto;
+  padding: 24px;
+  background: #f8f3f9;
+}
+.service-card:nth-child(2) { background: #eef1f3; }
+.service-card:nth-child(3) { background: #ffe1df; }
+.service-card.service-dark { background: var(--black); }
+.service-card:hover { transform: translateY(-3px); }
+.service-top { color: var(--black); opacity: 1; font-weight: 760; }
+.service-dark .service-top { color: var(--coral); }
+.service-arrow { display: none !important; }
+.service-visual { min-height: 235px; margin: 20px 0 2px; }
+.service-card h3 { margin-top: 20px; font-size: clamp(28px, 3vw, 38px); }
+.service-card p { max-width: 570px; }
+.service-card:not(.service-dark) > p { color: #4f4b52; }
+
+/* AI and human judgement are one operating-model section. */
+.ai-system { padding: 124px 0 132px; }
+.ai-system .section-heading { margin-bottom: 58px; }
+.ai-system .section-heading h2 { max-width: 900px; }
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  border: 0;
+}
+.workflow-rail { display: none; }
+.workflow-step {
+  min-height: 390px;
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 22px;
+  align-items: start;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 24px;
+  background: #0d171f;
+}
+.step-index { width: 52px; height: 52px; }
+.step-copy { padding-top: 2px; }
+.step-copy h3 { max-width: 430px; font-size: clamp(24px, 2.3vw, 34px); }
+.step-copy p { max-width: 490px; }
+.step-demo {
+  grid-column: 1 / -1;
+  height: 150px;
+  align-self: end;
+}
+.personalise-demo > span,
+.review-demo > div:first-child { color: #aaa5ab; }
+.judgement-panel {
+  margin-top: 18px;
+  padding: clamp(28px, 4vw, 54px);
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: clamp(38px, 6vw, 80px);
+  border-radius: 26px;
+  background: var(--coral);
+  color: var(--black);
+}
+.judgement-intro > span {
+  display: block;
+  margin-bottom: 22px;
+  font-size: 9px;
+  font-weight: 780;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.judgement-intro h3 {
+  max-width: 520px;
+  margin: 0;
+  font-size: clamp(38px, 4.5vw, 62px);
+  line-height: .96;
+  letter-spacing: -.055em;
+}
+.judgement-principles { border-top: 1px solid rgba(10,18,25,.26); }
+.judgement-principles article {
+  display: grid;
+  grid-template-columns: 38px minmax(150px, .8fr) 1fr;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(10,18,25,.26);
+}
+.judgement-principles span { font-size: 9px; letter-spacing: .1em; }
+.judgement-principles strong { font-size: 17px; line-height: 1.2; }
+.judgement-principles p { margin: 0; color: rgba(10,18,25,.82); font-size: 13px; }
+
+/* Portfolio proof is editorial, legible and intentionally stacked. */
+.work { padding-top: 124px; }
+.recommendation-proof.proof-strip {
+  margin: 24px 0 0;
+  padding: clamp(34px, 5vw, 64px) !important;
+  gap: 44px !important;
+  border-radius: 26px;
+  background: var(--black) !important;
+}
+.recommendation-heading {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) 260px;
+  gap: 32px;
+  align-items: end;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+.recommendation-heading > p { margin: 0; color: var(--coral); }
+.recommendation-heading h3 {
+  max-width: 760px;
+  font-size: clamp(38px, 4.6vw, 66px);
+}
+.recommendation-heading > span { margin: 0; color: #a7a2a8; }
+.recommendation-grid { gap: 14px; }
+.recommendation-card {
+  min-height: 0;
+  padding: clamp(26px, 4vw, 48px);
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 160px;
+  gap: clamp(28px, 5vw, 70px);
+  align-items: start;
+  border-radius: 22px;
+}
+.recommendation-card.is-client { background: var(--white); }
+.recommendation-card.is-medsattire { background: var(--coral); }
+.recommendation-person { align-items: flex-start; }
+.recommendation-card blockquote {
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(22px, 2.35vw, 34px);
+  line-height: 1.22;
+  letter-spacing: -.035em;
+}
+.recommendation-card.is-medsattire blockquote {
+  max-width: 660px;
+  font-size: clamp(18px, 1.55vw, 22px);
+  line-height: 1.45;
+  letter-spacing: -.015em;
+}
+.recommendation-brand,
+.recommendation-wordmark { margin: 0; padding: 0; align-self: end; }
+.recommendation-medsattire-wordmark { font-size: 30px; }
+
+/* A short, qualified enquiry without a long briefing form. */
+.contact { padding-top: 124px; }
+.contact-grid { grid-template-columns: 1.05fr .95fr; gap: clamp(50px, 7vw, 96px); }
+.contact-copy h2 { font-size: clamp(52px, 6vw, 88px); }
+.contact-email {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--coral);
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,111,104,.45);
+}
+.contact-form { align-self: start; padding: 30px; }
+.contact-form select {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  padding: 15px 42px 15px 16px;
+  color: var(--white);
+  background: #0d171f;
+  outline: none;
+}
+.contact-form select:focus { border-color: var(--coral); box-shadow: 0 0 0 3px rgba(255,111,104,.1); }
+.form-note { color: #a7a2a8; line-height: 1.5; }
+.work.section-light .work-meta span { color: #625d64; }
+.work.section-light .portfolio-project-card .work-meta span { color: #b8b3b9; }
+.telehealth-copy > .brand-cover-kicker { color: #4f4b52; opacity: 1; }
+.recommendation-card.is-medsattire .recommendation-person > div:last-child > span,
+.recommendation-card.is-medsattire .recommendation-person small { color: var(--black); }
+.portfolio-featured-head > span,
+.portfolio-more-head > div > span,
+.portfolio-more-head > p { color: #625d64; }
+
+@media (max-width: 1080px) {
+  .hero-grid { min-height: auto; grid-template-columns: 1fr; padding-top: 34px; }
+  .hero-system { max-width: 720px; justify-self: end; }
+  .system-canvas { min-height: 500px; }
+  .service-card { min-height: 470px; }
+  .recommendation-heading { grid-template-columns: 110px 1fr; }
+  .recommendation-heading > span { grid-column: 2; }
+  .recommendation-card { grid-template-columns: 230px 1fr; }
+  .recommendation-brand,
+  .recommendation-wordmark { grid-column: 1; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .hero { padding-top: 96px; padding-bottom: 34px; }
+  .hero-grid { gap: 44px; }
+  .hero h1 { font-size: clamp(54px, 16vw, 76px); }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .hero-proof { margin-top: 32px; }
+  .hero-system { max-width: 100%; }
+  .system-canvas { min-height: 410px; }
+  .agent-card { transform: scale(.7); }
+  .research-card { right: -20%; }
+  .human-card { right: -20%; }
+  .message-card { left: 10%; top: 39%; }
+  .hero-bottom { display: none; }
+  .brand-proof-v2 .brand-proof-shell { padding: 34px 0; }
+  .brand-proof-v2 .brand-proof-copy { display: block; padding-bottom: 20px; }
+  .brand-proof-v2 .brand-proof-copy h2 { margin-top: 9px; text-align: left; }
+  .brand-logo-cloud { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .brand-cloud-logo { min-height: 82px; padding: 18px 12px; border: 0 !important; }
+  .services,
+  .ai-system,
+  .work,
+  .contact { padding-top: 88px; }
+  .services,
+  .ai-system { padding-bottom: 94px; }
+  .service-grid,
+  .workflow { grid-template-columns: 1fr; }
+  .service-card { min-height: auto; padding: 20px; }
+  .service-visual { min-height: 220px; }
+  .workflow-step { min-height: 350px; padding: 22px; grid-template-columns: 48px 1fr; }
+  .step-index { width: 44px; height: 44px; }
+  .judgement-panel { grid-template-columns: 1fr; gap: 38px; padding: 28px 22px; }
+  .judgement-principles article { grid-template-columns: 30px 1fr; }
+  .judgement-principles p { grid-column: 2; }
+  .recommendation-proof.proof-strip { padding: 30px 18px !important; gap: 28px !important; }
+  .recommendation-heading { grid-template-columns: 1fr; gap: 12px; }
+  .recommendation-heading > span { grid-column: auto; }
+  .recommendation-card { grid-template-columns: 1fr; gap: 28px; }
+  .recommendation-brand,
+  .recommendation-wordmark { grid-column: auto; }
+  .recommendation-card blockquote { font-size: clamp(21px, 6.7vw, 29px); }
+  .contact-form { padding: 20px; }
+}
+
+@media (max-width: 420px) {
+  .system-canvas { min-height: 380px; }
+  .message-card { left: 5%; }
+  .performance-card { bottom: 1%; }
+  .brand-cloud-logo img { max-width: 120px; }
+  .xiq-wordmark { font-size: 30px; }
+}

@@ -128,12 +128,14 @@ menuButton?.addEventListener('click', () => {
   const open = !mobileMenu.classList.contains('open');
   mobileMenu.classList.toggle('open', open);
   menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   document.body.classList.toggle('menu-open', open);
 });
 
 mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   mobileMenu.classList.remove('open');
   menuButton?.setAttribute('aria-expanded', 'false');
+  menuButton?.setAttribute('aria-label', 'Open menu');
   document.body.classList.remove('menu-open');
 }));
 
@@ -203,9 +205,10 @@ contactForm?.addEventListener('submit', event => {
   const data = new FormData(contactForm);
   const name = String(data.get('name') || '').trim();
   const email = String(data.get('email') || '').trim();
+  const focus = String(data.get('focus') || '').trim();
   const message = String(data.get('message') || '').trim();
   const subject = encodeURIComponent(`Zelto Tech enquiry from ${name}`);
-  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nWhat they are trying to achieve:\n${message}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nArea of focus: ${focus}\n\nWhat they are trying to achieve:\n${message}`);
   window.location.href = `mailto:suhayb@lcmb.co.uk?subject=${subject}&body=${body}`;
 });
 

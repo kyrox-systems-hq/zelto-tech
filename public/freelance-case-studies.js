@@ -107,4 +107,5 @@ const installNamedFreelanceCases = () => {
 };
 
 installNamedFreelanceCases();
-import('./portfolio-showcase.js').catch(error => console.error('Portfolio showcase failed to load', error));
+window.dispatchEvent(new CustomEvent('zelto:portfolio-ready'));
+import('./homepage-proof-corrected.js').catch(error => console.error('Homepage proof failed to load', error));
