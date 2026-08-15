@@ -209,7 +209,8 @@ contactForm?.addEventListener('submit', event => {
   const message = String(data.get('message') || '').trim();
   const subject = encodeURIComponent(`Zelto Tech enquiry from ${name}`);
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nArea of focus: ${focus}\n\nWhat they are trying to achieve:\n${message}`);
-  window.location.href = `mailto:suhayb@lcmb.co.uk?subject=${subject}&body=${body}`;
+  const recipient = atob('c3VoYXliLm1hbnphckBvdXRsb29rLmNvbQ==');
+  window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
 });
 
 import('./freelance-case-studies.js').catch(error => console.error('Named freelance case studies failed to load', error));

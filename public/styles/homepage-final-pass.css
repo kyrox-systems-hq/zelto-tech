@@ -12,7 +12,7 @@
 }
 
 .hero-copy { max-width: 760px; }
-.hero h1 { max-width: 720px; font-size: clamp(64px, 7vw, 108px); text-wrap: balance; }
+.hero h1 { max-width: 720px; color: var(--coral); font-size: clamp(64px, 7vw, 108px); text-wrap: balance; }
 .hero-lede { max-width: 700px; }
 .hero-proof { margin-top: 38px; }
 .hero-system { max-width: 540px; justify-self: end; width: 100%; }
@@ -251,14 +251,6 @@
 .contact { padding-top: 124px; }
 .contact-grid { grid-template-columns: 1.05fr .95fr; gap: clamp(50px, 7vw, 96px); }
 .contact-copy h2 { font-size: clamp(52px, 6vw, 88px); }
-.contact-email {
-  display: inline-block;
-  margin-top: 22px;
-  color: var(--coral);
-  font-size: 13px;
-  font-weight: 700;
-  border-bottom: 1px solid rgba(255,111,104,.45);
-}
 .contact-form { align-self: start; padding: 30px; }
 .contact-form select {
   width: 100%;
@@ -297,7 +289,7 @@
 @media (max-width: 760px) {
   .hero { padding-top: 96px; padding-bottom: 34px; }
   .hero-grid { gap: 44px; }
-  .hero h1 { font-size: clamp(54px, 16vw, 76px); }
+  .hero h1 { font-size: clamp(50px, 14vw, 68px); }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
   .hero-proof { margin-top: 32px; }
   .hero-system { max-width: 100%; }
