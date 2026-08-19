@@ -120,19 +120,66 @@ When a PDF is the selected format, keep it concise and decision-useful, generall
 
 For first-touch outreach, prefer a clean hosted link or browser-openable PDF over an unexpected attachment unless there is a specific reason attachment delivery is better.
 
-## 6. Live-send gate
+## 6. Mandatory adversarial review
+
+Before any prospect package is approved, run a separate adversarial review of **the strategy, the asset/offer, and the final email**. The reviewer must actively try to reject or improve the work rather than merely confirm it.
+
+The adversarial review must challenge:
+
+- whether the selected outreach strategy is actually stronger than the alternatives considered;
+- whether any source fact has silently become an unsupported claim;
+- whether an inference is being presented as something the prospect explicitly said;
+- whether the recipient is the best legitimate first contact rather than simply the easiest verified email;
+- whether the selected proof is truly analogous and accurately described;
+- whether the asset creates useful value or merely demonstrates effort;
+- whether the CTA is the strongest natural next step;
+- whether any sentence or visual is generic, creepy, padded, self-congratulatory or unnecessary;
+- whether the package overstates Zelto's knowledge of the prospect's internal performance;
+- whether a simpler approach would outperform the chosen asset.
+
+For the email specifically, every sentence must earn its place. Reject generic agency introductions, filler, unsupported urgency, vague praise and meeting-begging when a stronger value-progression CTA is available.
+
+Record the issues found and the revisions made. **Unresolved material objections fail the prospect package.**
+
+## 7. Creative quality / wow-factor gate
+
+Any prospect-facing visual asset must pass a separate creative-quality review after factual/editorial review. Strategic correctness is not enough.
+
+The asset must feel **premium, deliberate, modern and unmistakably prospect-specific**. It should itself demonstrate the standard Zelto claims to offer across marketing, web, creative and AI-enabled execution.
+
+For PDFs and briefs:
+
+- render and inspect every page visually before approval;
+- check typography, hierarchy, spacing, alignment, contrast, consistency and page balance;
+- use diagrams, information design and visual storytelling where they improve comprehension;
+- avoid a flat Word-document look, generic consultancy template or text-heavy deck;
+- check for clipping, awkward wrapping, crowded cards, formatting defects and weak visual rhythm;
+- make the cover and at least one internal page visually memorable without becoming decorative noise;
+- ensure the document would be credible and comfortable for the recipient to forward internally.
+
+For web/mock-up assets:
+
+- inspect desktop and mobile layouts;
+- confirm brand fidelity, genuine asset use, responsive behaviour, CSP compatibility, visual hierarchy and conversion logic;
+- reject generic-template appearance or anything that could plausibly have been sent unchanged to another company.
+
+If the result is merely competent, basic or visually forgettable, **the gate fails and the asset must be redesigned before outreach**.
+
+## 8. Live-send gate
 
 No first-touch email may be scheduled until all applicable items are true:
 
 - the Outreach Strategy & Offer Design step is complete;
 - the intended recipient has been chosen by strategy, then an exact public business email has been verified;
 - the selected prospect-specific asset/offer exists in final form, if a separate asset was selected;
+- the adversarial review has passed and all material objections were resolved;
+- any visual asset has passed the creative-quality / wow-factor gate;
 - any hosted asset is deployed and independently verified live;
 - the live route is not a 404 and renders the intended prospect content;
 - the closest relevant case-study/project URL has been selected when one exists;
 - the email includes the actual live asset URL and relevant proof URL when applicable;
 - duplicate, opt-out and private-sector gates pass.
 
-## 7. Do not recreate obsolete deployment experiments
+## 9. Do not recreate obsolete deployment experiments
 
 Do not add Firebase GitHub Actions, a new Vercel project, a new Zelto-specific watcher, or another installer merely because a prospect URL is not live. First inspect the existing portfolio deployment bridge and trigger it correctly.
