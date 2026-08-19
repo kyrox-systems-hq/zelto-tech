@@ -2,6 +2,10 @@
 
 A responsive one-page website for Zelto Tech, configured for Firebase Hosting.
 
+## Project resources
+
+See [`PROJECT_RESOURCES.md`](./PROJECT_RESOURCES.md) before changing outbound deployment infrastructure or the value-first outreach workflow. It contains the canonical, already-installed mock-up deployment route and the source-first asset-selection rules.
+
 ## Brand palette
 
 - Coral: `#ff6f68`
