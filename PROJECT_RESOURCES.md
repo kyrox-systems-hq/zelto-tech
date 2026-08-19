@@ -48,33 +48,33 @@ The main Zelto website remains in `kyrox-systems-hq/zelto-tech` and is served fr
 
 ## 2. Mandatory Outreach Strategy & Offer Design step
 
-A qualified lead must **not** move straight from account research into asset production or email writing.
+A qualified lead must **not** move straight from account research into asset production, recipient selection by email availability, or email writing.
 
-Before building anything, run a separate reasoning/research step whose job is to decide the best way to earn a response from this specific prospect.
+Before building anything or rejecting a lead because a particular person's email is unavailable, run a separate reasoning/research step whose job is to decide the best way to earn a response from this specific prospect.
 
 The strategy record must answer:
 
 - What does the source explicitly say the company is doing, prioritising or struggling with?
 - What is Zelto inferring rather than knowing?
-- Who is the best first recipient, and why? Consider role relevance, authority, accessibility and whether a non-executive champion is a better first entry than an executive.
+- Who is the best first recipient, and why? Compare role relevance, authority, accessibility and whether a functional champion is a better first entry than an executive.
 - What is the single commercial objective of the outreach?
-- What concrete value can Zelto offer before asking for a meeting?
+- What concrete value can Zelto offer before asking for time?
 - Which format is strongest for this account: email-only insight, hosted PDF/brief, mock-up, campaign concept, annotated teardown, mini audit, benchmark, B2B outbound sample, case-study-led note, video/visual concept, or a combination?
-- Should the asset be linked, hosted or attached? For first-touch cold email, consider the recipient's security friction and do not default to an unexpected attachment.
+- Should the asset be linked, hosted or attached? For first-touch cold email, consider security friction and do not default to an unexpected attachment.
 - Which existing Zelto case study/project is closest, if any?
 - What CTA best fits the asset and recipient?
 - What should the follow-up path be if there is no reply?
 - What are the biggest risks in the hypothesis, and how should the outreach avoid overstating them?
 
-No asset type is assumed in advance. A website mock-up is only correct when the research shows that a website/conversion demonstration is the strongest offer.
+The strategy step must compare at least 2-3 plausible approaches and record why the selected one is superior for this prospect.
 
-The strategy step must compare at least 2-3 plausible outreach approaches and record why the selected one is superior for this prospect.
+**Contact verification happens after this decision.** First choose the ideal recipient or ranked recipient set. Then verify an exact public business email for the best legitimate option. Do not let easy email availability silently choose the recipient.
 
-## 3. Asset selection rule for outbound
+## 3. Asset / offer selection rule for outbound
 
-Do not automatically equate "value-first outreach" with "website mock-up".
+Do not automatically equate "value-first outreach" with "website mock-up", PDF, or any other separate artifact.
 
-Only after the Outreach Strategy & Offer Design step has chosen the approach should the asset be produced. Possible assets include:
+The strategy step may choose:
 
 - focused website/landing-page mock-up;
 - hosted PDF or commercial brief;
@@ -84,9 +84,12 @@ Only after the Outreach Strategy & Offer Design step has chosen the approach sho
 - B2B outbound sample/ICP concept;
 - brand/creative concept;
 - benchmark or peer comparison;
-- another small prospect-specific demonstration.
+- another small prospect-specific demonstration;
+- **or no separate asset at all** when a concise email plus relevant case study/insight is genuinely stronger.
 
-If the opportunity is inferred rather than explicitly requested, label the asset and outreach as a hypothesis/speculative concept. Do not present an inferred need as though the prospect asked for it.
+If the opportunity is inferred rather than explicitly requested, label any asset and outreach as a hypothesis/speculative concept. Do not present an inferred need as though the prospect asked for it.
+
+If a separate asset is selected, effort should be proportional to opportunity quality, likely deal value and expected usefulness. Do not overbuild merely to satisfy a process step.
 
 ## 4. Source-first requirement
 
@@ -99,23 +102,37 @@ For every outbound prospect, the internal record must preserve:
 - why the inferred problem is commercially relevant;
 - the Outreach Strategy & Offer Design decision;
 - alternatives considered and rejected;
-- why the chosen asset/offer is the right demonstration.
+- why the chosen asset/offer is the right demonstration;
+- ideal recipient(s) before email availability is checked.
 
 No asset should be built before this source/inference distinction and outreach strategy are clear.
 
-## 5. Live-send gate
+## 5. PDF rule
 
-No first-touch email may be scheduled until all of the following are true:
+When a PDF is the selected format, keep it concise and decision-useful, generally 3-6 pages rather than a generic deck. A useful structure is:
+
+1. why now / explicit source trigger;
+2. facts versus Zelto inference;
+3. 2-4 concrete opportunity routes;
+4. one worked execution example or small test plan;
+5. the nearest relevant proof;
+6. a simple next step.
+
+For first-touch outreach, prefer a clean hosted link or browser-openable PDF over an unexpected attachment unless there is a specific reason attachment delivery is better.
+
+## 6. Live-send gate
+
+No first-touch email may be scheduled until all applicable items are true:
 
 - the Outreach Strategy & Offer Design step is complete;
-- the selected prospect-specific asset/offer exists in its intended final form;
+- the intended recipient has been chosen by strategy, then an exact public business email has been verified;
+- the selected prospect-specific asset/offer exists in final form, if a separate asset was selected;
 - any hosted asset is deployed and independently verified live;
 - the live route is not a 404 and renders the intended prospect content;
 - the closest relevant case-study/project URL has been selected when one exists;
 - the email includes the actual live asset URL and relevant proof URL when applicable;
-- the recipient is an appropriate verified business contact;
 - duplicate, opt-out and private-sector gates pass.
 
-## 6. Do not recreate obsolete deployment experiments
+## 7. Do not recreate obsolete deployment experiments
 
 Do not add Firebase GitHub Actions, a new Vercel project, a new Zelto-specific watcher, or another installer merely because a prospect URL is not live. First inspect the existing portfolio deployment bridge and trigger it correctly.
