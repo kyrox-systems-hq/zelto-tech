@@ -183,3 +183,28 @@ No first-touch email may be scheduled until all applicable items are true:
 ## 9. Do not recreate obsolete deployment experiments
 
 Do not add Firebase GitHub Actions, a new Vercel project, a new Zelto-specific watcher, or another installer merely because a prospect URL is not live. First inspect the existing portfolio deployment bridge and trigger it correctly.
+
+## 10. Daily output target and recovery semantics
+
+The normal cold-outbound target is **five completed quality initial outreaches per Asia/Karachi weekday**, not five research attempts, five prospects discovered, or five assets created.
+
+Mach42 on 19 August 2026 is a separate bonus prospect and does not count toward the normal five.
+
+A prospect counts toward a day's five only when every applicable research, qualification, strategy, creative and adversarial gate has passed and the real first-touch email is either:
+
+- verified delivered in Outlook Sent Items that day; or
+- genuinely queued using Outlook-native scheduling for delivery that same day in an appropriate recipient-local business window, and the scheduled item is visible/verifiable in Outlook.
+
+The following do **not** count: rejected prospects, research logs, unsent drafts, merely-created assets, GitHub commits, deployment-blocked work, failed sends, ChatGPT tasks/reminders, obsolete outreach, or packages that failed adversarial/creative review.
+
+The production automation intentionally has more run slots than the five-email target. These are **recovery capacity**, not permission to send more than five. Every run checks the current completed count first. Once five normal initials are completed, all remaining runs that day stop. If a run fails or a prospect is rejected, a later recovery slot finds or completes another prospect instead.
+
+Do not weaken the 80+ qualification threshold, private-sector rules, source quality, asset quality, buyer selection, adversarial review or creative standard to fill the quota. Use additional private-signal searches, different geographies/service lanes and later recovery slots instead.
+
+## 11. Outlook-native scheduling is mandatory
+
+When an initial email is scheduled for future delivery, it must be scheduled through Outlook's native scheduling action so the item is visible and verifiable in Outlook. **A ChatGPT automation/reminder is not an acceptable substitute for an Outlook scheduled email.**
+
+After scheduling, verify recipient, subject, body, delivery time and links in Outlook before counting it toward the daily five.
+
+If the chosen value asset is a PDF or other attachment and Outlook's native scheduled-send path cannot carry attachments, do not create a hidden future-send automation. Prefer a professionally hosted/browser-openable version and link it in the email. If an attachment is strategically essential, send only when the current time is already inside the recipient's appropriate business window and the direct Outlook send action supports the attachment.
