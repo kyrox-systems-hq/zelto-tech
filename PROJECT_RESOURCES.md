@@ -208,3 +208,85 @@ When an initial email is scheduled for future delivery, it must be scheduled thr
 After scheduling, verify recipient, subject, body, delivery time and links in Outlook before counting it toward the daily five.
 
 If the chosen value asset is a PDF or other attachment and Outlook's native scheduled-send path cannot carry attachments, do not create a hidden future-send automation. Prefer a professionally hosted/browser-openable version and link it in the email. If an attachment is strategically essential, send only when the current time is already inside the recipient's appropriate business window and the direct Outlook send action supports the attachment.
+
+## 12. Current campaign architecture: Intent-Led and Trigger-Led
+
+The service-outreach system is intentionally split into **two mutually exclusive production campaigns** sharing the same daily physical-send capacity.
+
+### Intent-Led
+
+Intent-Led is for current public buyer/operator evidence that the prospect is actively seeking or recommending a relevant supplier/service, explicitly stating a Zelto-addressable problem, or describing an active implementation/project requirement.
+
+- The prospect's own intent/problem/project is the qualifying basis.
+- Funding, expansion, hiring, advertising, leadership changes or launches may support the case but cannot replace intent.
+- Search the freshest evidence first. Current automation uses a 24-hour primary window and may extend to 72 hours when needed.
+- If a candidate is attractive only because of account-level commercial triggers, route it to Trigger-Led instead of weakening the Intent definition.
+
+### Trigger-Led
+
+Trigger-Led is proactive outreach based on verified company change, spend, commercial momentum or capacity signals where the prospect is **not** publicly asking for the service.
+
+- Funding alone is insufficient.
+- One hire, one executive change or an unattractive website alone is insufficient.
+- The account must have a concrete Zelto-addressable opportunity and a credible case that external execution could plausibly be purchased.
+- If current explicit service-seeking intent is found, route the prospect to Intent-Led.
+
+Current Trigger-Led Quality Gate v2 uses a 100-point model: trigger stack 20; concrete opportunity 20; service fit 15; external purchase/outsourcing plausibility 15; buyer economics 10; timing 10; decision-maker/contact quality 5; proof/personalisation 5. Total must be at least 80 and the campaign also enforces non-compensable category floors. A high headline score cannot compensate for weak external-purchase plausibility or weak opportunity evidence.
+
+### Shared rules
+
+- Intent-Led receives the first production opportunity each weekday.
+- Intent + Trigger share one physical-send ceiling/target of five first touches per Asia/Karachi weekday, across all delivery mailboxes used for Zelto service outreach.
+- A production slot is a research/recovery opportunity, not an automatic send.
+- Rejections do not lower the quality threshold and do not consume a quality completion.
+- A company must not be independently pursued in both campaigns for the same opportunity.
+- Stage order is a hard gate. Discovery/verification/qualification/research/strategy-value/copy-review/CRM-delivery records must exist in the correct sequence before release. A review written after scheduling does not retroactively make a message compliant.
+- The final email must visibly deliver the strongest Strategy-stage idea. It must not merely promise that Zelto could think of something later.
+- Both campaigns inherit the strategy, source-first, proof-provenance, adversarial-review, creative-quality and Outlook-native delivery rules in this document.
+
+## 13. Follow-up and verification rules
+
+An automated follow-up clock starts only from the **actual verified send timestamp**, never merely from the scheduled time.
+
+Normal automated follow-ups are Day 3, Day 7 and Day 12 **business days** after verified first-touch delivery.
+
+Any substantive reply, manual continuation by Suhayb, explicit opt-out, bounce or Do Not Contact state suppresses automated follow-up. Out-of-office is not a substantive reply.
+
+Day 3 should resurface the specific value/idea without becoming a generic nudge. Day 7 must add one genuinely useful new observation/refinement/proof extension. Day 12 closes the loop cleanly. Follow-up copy must pass its own adversarial review and must never use `just checking in` filler.
+
+## 14. CRM and source-of-truth hierarchy
+
+For accepted prospects, the intended commercial system of record is HubSpot: company, target contact, association, Lead lifecycle/status, campaign/source context, research/strategy/proof notes and next-action task. Do not create a Deal until a genuine commercial opportunity exists.
+
+Outlook remains the source of truth for actual message scheduling/delivery, thread state and replies. monday.com is the source of truth for campaign operating rules, quality-gate changes, incidents and durable process decisions. This GitHub resource preserves the cross-system canonical rules and deployment infrastructure.
+
+Never claim a blocked CRM write succeeded. When connector confirmation blocks a write, record the exact proposed package and the blocked state.
+
+## 15. Transition-draft safety rule
+
+When an older scheduled message was queued before a newer quality standard took effect, it still consumes **physical send capacity** while it remains pending, even if it no longer counts as a quality-compliant completion.
+
+Do not schedule a corrected replacement or another Zelto service-outreach initial while a pending transition message would cause the shared physical-send ceiling to be exceeded.
+
+If the connector cannot cancel or modify a deferred-send Outlook item, record the failure accurately and require manual Outlook cancellation rather than creating a hidden duplicate mechanism.
+
+If a transition message sends despite no longer meeting the current standard:
+
+- preserve the actual send for historical/reply handling;
+- classify it as transition/noncompliant rather than a current quality completion;
+- do not use it as an automated Day 3/7/12 follow-up seed unless it is separately revalidated under the current standard;
+- do not send a duplicate corrected first touch to the same account.
+
+### 20 August 2026 incident
+
+Five pre-v2 Trigger-Led Outlook drafts were left physically scheduled for 20 August while two other Trigger first touches had already been sent through Gmail. The five transition subjects were:
+
+- `Rappor's next phase of growth`
+- `GoSmarter's expansion`
+- `TidalSense commercialisation`
+- `For Matthew Carr: turning pilots into partnerships`
+- `For Chris Grannell: North America growth`
+
+Fresh cancellation attempts through the Outlook connector returned Microsoft 502 on the deferred-send objects. These five therefore required manual cancellation in Outlook to prevent physical delivery. The permanent Intent and Trigger automations were kept enabled but explicitly blocked from adding any new initial while the transition drafts remained pending.
+
+Under the v2 re-audit, Rappor and TidalSense were HOLD/REJECT; GoSmarter survived with corrected copy; Luffy AI survived with the current EVP GTM as the appropriate first owner rather than the old CEO route; Urban Zoo/Gamechanger survived with its CCO and verified direct route rather than the old CEO/generic route.
