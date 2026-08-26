@@ -105,8 +105,6 @@ const installPortfolioProjects = () => {
   workGrid.appendChild(wrapper);
   hydrateProjectImages(wrapper);
 
-  const workIntro = document.querySelector('#work .section-heading p:last-child');
-  if (workIntro) workIntro.textContent = 'Zelto Tech is a new name, not a team starting from zero. Our experience spans paid media, B2B campaigns, automation, brand identity, packaging and product-led creative.';
 };
 
 installFizzyFunkWork();

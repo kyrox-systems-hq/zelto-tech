@@ -59,11 +59,11 @@
 
     showcase.innerHTML = `
       <div class="portfolio-more portfolio-more-only">
-        <div class="portfolio-more-head"><div><span>Selected work</span><h3>Explore more case studies.</h3></div><p>Swipe, scroll, or use the arrows.</p></div>
+        <div class="portfolio-more-head"><div><h3>Explore case studies.</h3></div><p>Swipe, scroll, or use the arrows.</p></div>
         <div class="portfolio-slider-shell">
           <button class="portfolio-slider-arrow is-prev" type="button" aria-label="Previous case studies"><span aria-hidden="true">←</span></button>
-          <div class="portfolio-shelf-track" role="region" tabindex="0" aria-label="More selected work"></div>
-          <button class="portfolio-slider-arrow is-next" type="button" aria-label="More case studies"><span aria-hidden="true">→</span></button>
+          <div class="portfolio-shelf-track" role="region" tabindex="0" aria-label="Case studies"></div>
+          <button class="portfolio-slider-arrow is-next" type="button" aria-label="Next case studies"><span aria-hidden="true">→</span></button>
         </div>
       </div>`;
 
