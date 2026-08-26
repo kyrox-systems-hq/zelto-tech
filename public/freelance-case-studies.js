@@ -108,4 +108,4 @@ const installNamedFreelanceCases = () => {
 
 installNamedFreelanceCases();
 window.dispatchEvent(new CustomEvent('zelto:portfolio-ready'));
-import('./homepage-proof-corrected.js').catch(error => console.error('Homepage proof failed to load', error));
+import('./homepage-proof-corrected.js?v=zt-20260826-trust-copy').catch(error => console.error('Homepage proof failed to load', error));

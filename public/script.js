@@ -213,4 +213,4 @@ contactForm?.addEventListener('submit', event => {
   window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
 });
 
-import('./freelance-case-studies.js').catch(error => console.error('Named freelance case studies failed to load', error));
+import('./freelance-case-studies.js?v=zt-20260826-trust-copy').catch(error => console.error('Named freelance case studies failed to load', error));
