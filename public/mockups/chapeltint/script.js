@@ -21,17 +21,50 @@
     if (event.key === 'Escape') setNavigation(false);
   });
 
+  const header = document.querySelector('[data-header]');
+  const hero = document.querySelector('.hero');
+  const heroVisual = document.querySelector('.hero-visual');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const updateHeader = () => {
+    header?.classList.toggle('is-scrolled', window.scrollY > 16);
+  };
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  if (hero && heroVisual && !reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    hero.addEventListener('pointermove', (event) => {
+      const bounds = hero.getBoundingClientRect();
+      const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
+      const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 8;
+      heroVisual.style.setProperty('--shift-x', `${x.toFixed(2)}px`);
+      heroVisual.style.setProperty('--shift-y', `${y.toFixed(2)}px`);
+    });
+
+    hero.addEventListener('pointerleave', () => {
+      heroVisual.style.setProperty('--shift-x', '0px');
+      heroVisual.style.setProperty('--shift-y', '0px');
+    });
+  }
+
   const revealItems = document.querySelectorAll('.reveal');
 
-  if (!('IntersectionObserver' in window)) {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
+  if (!('IntersectionObserver' in window) || reducedMotion || !Element.prototype.animate) {
     return;
   }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
+      entry.target.animate([
+        { opacity: 0.42, transform: 'translateY(28px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+      ], {
+        duration: 780,
+        easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+        fill: 'none'
+      });
       observer.unobserve(entry.target);
     });
   }, {
