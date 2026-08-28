@@ -4,7 +4,11 @@
   "private": true,
   "description": "One-page website for Zelto Tech, configured for Firebase Hosting.",
   "scripts": {
+    "dev": "vite",
     "serve": "firebase emulators:start --only hosting",
     "deploy": "firebase deploy --only hosting"
+  },
+  "devDependencies": {
+    "vite": "^8.2.2"
   }
 }
