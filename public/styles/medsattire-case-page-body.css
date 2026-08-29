@@ -212,14 +212,18 @@
 
 .meds-testimonial-layout {
   display: grid;
-  grid-template-columns: 360px minmax(0, 1fr);
+  grid-template-columns: 190px minmax(0, 1fr);
   gap: clamp(64px, 8vw, 118px);
   align-items: center;
 }
 
+.meds-testimonial-person-column {
+  align-self: center;
+}
+
 .meds-testimonial-portrait {
   position: relative;
-  width: 360px;
+  width: 190px;
   aspect-ratio: 1;
   overflow: hidden;
   background: #d4d5d3;
@@ -237,9 +241,9 @@
 .meds-testimonial-portrait span {
   position: absolute;
   right: -4px;
-  bottom: -65px;
+  bottom: -35px;
   color: rgba(113, 224, 202, .42);
-  font-size: 240px;
+  font-size: 130px;
   font-weight: 900;
   line-height: 1;
   letter-spacing: -.1em;
@@ -268,12 +272,9 @@
 }
 
 .meds-testimonial-person {
-  margin-top: 38px;
-  padding-top: 20px;
-  display: flex;
-  gap: 16px;
-  align-items: baseline;
-  border-top: 1px solid rgba(255, 255, 255, .18);
+  margin-top: 18px;
+  display: grid;
+  gap: 7px;
 }
 
 .meds-testimonial-person strong {
@@ -286,6 +287,7 @@
   font-weight: 750;
   letter-spacing: .06em;
   text-transform: uppercase;
+  line-height: 1.5;
 }
 
 .meds-results-section {
